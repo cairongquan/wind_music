@@ -14,14 +14,22 @@ const winURL = process.env.NODE_ENV === 'development'
   ? `http://localhost:9080`
   : `file://${__dirname}/index.html`
 
-function createWindow () {
+function createWindow() {
   /**
    * Initial window options
    */
-  mainWindow = new BrowserWindow({
-    height: 563,
+  mainWindow = new BrowserWindow({ //
+    height: 720,
     useContentSize: true,
-    width: 1000
+    width: 1100,//宽
+    frame: false,//无边框
+    resizable:false,//用户可拖拽大小尺寸
+    transparent: true,
+    webPreferences: {
+      devTools: true,
+      nodeIntegration: true,
+      enablemotemodule: true
+    }
   })
 
   mainWindow.loadURL(winURL)
