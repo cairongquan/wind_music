@@ -9,26 +9,29 @@ if (process.env.NODE_ENV !== 'development') {
   global.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
 }
 
-let mainWindow
+let mainWindow;
 const winURL = process.env.NODE_ENV === 'development'
   ? `http://localhost:9080`
   : `file://${__dirname}/index.html`
+
+
+const ipc = require('electron').ipcMain;
 
 function createWindow() {
   /**
    * Initial window options
    */
   mainWindow = new BrowserWindow({ //
-    height: 720,
+    height: 680,
     useContentSize: true,
-    width: 1100,//宽
+    width: 1120,//宽
     frame: false,//无边框
-    resizable:false,//用户可拖拽大小尺寸
-    transparent: true,
+    resizable: false,//用户可拖拽大小尺寸
+    transparent: true, //背景是否透明
     webPreferences: {
       devTools: true,
       nodeIntegration: true,
-      enablemotemodule: true
+      enableBlinkFeatures: 'CSSBackdropFilter',
     }
   })
 
@@ -37,6 +40,7 @@ function createWindow() {
   mainWindow.on('closed', () => {
     mainWindow = null
   })
+
 }
 
 app.on('ready', createWindow)
@@ -44,6 +48,23 @@ app.on('ready', createWindow)
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
+  }
+})
+
+
+ipc.on('close-window', () => { //关闭程序主进程
+  mainWindow.close();
+})
+
+ipc.on('min-window', () => {
+  mainWindow.minimize()
+})
+
+ipc.on('max',  ()=> {
+  if (mainWindow.isMaximized()) {
+    return mainWindow.restore();
+  } else {
+    mainWindow.maximize();
   }
 })
 

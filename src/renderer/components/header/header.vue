@@ -1,33 +1,16 @@
 <template>
   <div id="main-header">
     <div class="btns-show-box">
-      <div class="close-btn btn" @click="ok">
-        <!-- <i class="iconfont icon-quxiao"></i> -->
-      </div>
-      <div class="max-btn btn">
-        <!-- <i class="iconfont icon-jiahao"></i> -->
-      </div>
-      <div class="min-btn btn">
-        <!-- <i class="iconfont icon-suoxiao"></i> -->
-      </div>
+      <div class="close-btn btn" @click="closeWindowEvent"></div>
+      <div class="min-btn btn" @click="miniWindowEvent"></div>
     </div>
   </div>
 </template>
 
 <script>
+import headerJS from './header.js';
 export default {
-  data() {
-    return {
-      isShowMaxIcon: false,
-      isShowMixIcon: false,
-      isShowCloseICon: false,
-    };
-  },
-  methods: {
-    ok() {
-      console.log(1);
-    },
-  },
+  ...headerJS
 };
 </script>
 

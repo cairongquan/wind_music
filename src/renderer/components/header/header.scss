@@ -1,19 +1,20 @@
 #main-header {
-    border-top-left-radius: 6.45px;
-    border-top-right-radius: 6.45px;
-    overflow: hidden;
-    width: 100%;
-    height: 38px;
+    height: 24px;
     padding: 5px 10px;
-    background-color: #f9f9f7 !important;
+    background-color: #f5f6f7 !important;
     display: flex;
     align-items: center;
-    z-index: 99999;
+    z-index: 2;
     -webkit-app-region: drag;
 
     .btns-show-box {
         display: flex;
         align-items: center;
+
+        .out-btn-box {
+            width: 25px;
+            height: 25px;
+        }
 
         .btn {
             text-align: center;
@@ -22,9 +23,10 @@
             line-height: 20px;
             background-color: #e7e7e7;
             border-radius: 50%;
-            cursor: pointer;
-            margin: 0px 5px;
+            margin: 0px 10px;
             transition: all ease .2s;
+            cursor: pointer;
+            -webkit-app-region: no-drag;
 
             i {
                 font-size: 12px;
@@ -39,6 +41,7 @@
         .max-btn {
             background-color: #f7bc33;
         }
+
 
         .close-btn {
             background-color: #ea4f49;

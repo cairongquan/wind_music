@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <headerCom></headerCom>
-    <router-view style="margin-top:48px;"></router-view>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
   components: {
     headerCom,
   },
-  name: "my-project",
+  name: "wind_music",
 };
 </script>
 
@@ -19,5 +19,14 @@ export default {
 * {
   margin: 0;
   padding: 0;
+}
+
+#app {
+  /* border-bottom-left-radius: 6.45px;
+  border-bottom-right-radius: 6.45px; */
+  border-radius: 5.5px;
+  overflow: hidden;
+  overflow-y: hidden;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
 }
 </style>
