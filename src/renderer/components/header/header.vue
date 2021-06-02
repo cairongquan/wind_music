@@ -1,16 +1,16 @@
 <template>
   <div id="main-header">
     <div class="btns-show-box">
-      <div class="close-btn btn" @click="closeWindowEvent"></div>
       <div class="min-btn btn" @click="miniWindowEvent"></div>
+      <div class="close-btn btn" @click="closeWindowEvent"></div>
     </div>
   </div>
 </template>
 
 <script>
-import headerJS from './header.js';
+import headerJS from "./header.js";
 export default {
-  ...headerJS
+  ...headerJS,
 };
 </script>
 

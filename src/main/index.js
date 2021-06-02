@@ -22,16 +22,18 @@ function createWindow() {
    * Initial window options
    */
   mainWindow = new BrowserWindow({ //
-    height: 680,
+    height: 780,
     useContentSize: true,
     width: 1120,//宽
     frame: false,//无边框
     resizable: false,//用户可拖拽大小尺寸
     transparent: true, //背景是否透明
+    thickFrame:true,
     webPreferences: {
       devTools: true,
       nodeIntegration: true,
-      enableBlinkFeatures: 'CSSBackdropFilter',
+      experimentalFeatures: true,
+      enableBlinkFeatures:"CSSBackdropfilter"
     }
   })
 
