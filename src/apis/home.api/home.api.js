@@ -6,5 +6,14 @@ export default {
             url: "/playlist/highquality/tags",
             method: "get"
         })
+    },
+    getHomeBannerData(){ //获取首页轮播信息
+        return axios.request({
+            method:"get",
+            url:"/banner",
+            params:{
+                type:0
+            }
+        })
     }
 }

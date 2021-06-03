@@ -22,14 +22,14 @@
         }
 
         .btn {
+            transition: 500ms all ease-in-out;
             text-align: center;
-            width: 18px;
-            height: 18px;
+            width: 17px;
+            height: 17px;
             line-height: 20px;
             background-color: #e7e7e7;
             border-radius: 50%;
-            margin: 0px 10px;
-            transition: all ease .2s;
+            margin: 0px 5px;
             cursor: pointer;
             -webkit-app-region: no-drag;
 
@@ -43,6 +43,10 @@
             background-color: #69ca42;
         }
 
+        .min-btn:hover{
+            background-color: #0eb83a;
+        }
+
         .max-btn {
             background-color: #f7bc33;
         }
@@ -50,6 +54,10 @@
 
         .close-btn {
             background-color: #ea4f49;
+        }
+
+        .close-btn:hover{
+            background-color: #f20c00;
         }
     }
 }

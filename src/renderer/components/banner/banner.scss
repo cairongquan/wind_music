@@ -1,0 +1,133 @@
+#main-out-content{
+  width: 100%;
+  height: 320px;
+  position: relative;
+}
+
+.main-banner-show-box {
+  position: relative;
+  background-size: inherit;
+  .bgc-box {
+    border-radius: 10px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 50%;
+    width: 560px;
+    height: 230px;
+    cursor: pointer;
+    transition: 500ms all ease-in-out;
+    background-position: center;
+    background-size: cover;
+    transform: translate3d(-50% ,30px,-80px);
+    overflow: hidden;
+    .bgc-box-tips{
+      user-select: none;
+      background-color: #cc4a4a;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 60px;
+      height: 20px;
+      font-size: 12px;
+      text-align: center;
+      line-height: 20px;
+      border-top-left-radius: 10px;
+      color: #fff;
+    }
+  }
+  .bgc-box:before {
+    position: absolute;
+    overflow: hidden;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0);
+    transition-delay: 100ms !important;
+    transition: all 500ms ease-in-out;
+    z-index: -1;
+  }
+  .activeClass{
+    box-shadow: 1px 1px 12px 1px rgba(0,0,0,.1);
+    transform: translate3d(-50%, 30px, -10px);
+    z-index:20;
+
+  }
+  .previousClass{
+    transform: translate3d(-95%,45px,-100px);
+    z-index:19;
+    height: 200px;
+    box-shadow: 2px 2px 11px rgba(0,0,0,.1);
+  }
+  .nextClass{
+    transform: translate3d(-5%,45px,-100px);
+    z-index: 18;
+    height: 200px;
+    box-shadow: 2px 2px 11px rgba(0,0,0,.1);
+  }
+
+  .otherClass{
+    opacity: 0;
+  }
+  .arrow-box{
+    width: 40px;
+    height: 40px;
+    color: #8c8987;
+    transition: 250ms all ease;
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    top: 125px;
+    z-index: 30;
+    font-weight: 600;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 50%;
+    overflow: hidden;
+    font-size: 12px;
+    .filter-arrow-box{
+      height: 40px;
+      background-color: rgba(0,0,0,0.75);
+    }
+  }
+  .arrow-left-box{
+    left: 15px;
+  }
+  .arrow-right-box:hover{
+    color: #fff;
+  }
+
+  .arrow-right-box{
+    right: 15px;
+  }
+
+  .arrow-left-box:hover{
+    color: #fff;
+  }
+}
+
+.duto-main-box{
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  list-style: none;
+  height: 25px;
+  justify-content: center;
+  li{
+    margin: 0px 3.5px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color:rgba(65, 85, 93,.2);
+    transition: 300ms ease all;
+  }
+  li:hover{
+    background-color: #ec4141;
+  }
+}
