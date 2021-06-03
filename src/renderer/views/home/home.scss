@@ -1,14 +1,12 @@
 #main-box {
-    height: 700px;
-    width: 1064px;
+    width: 1080px;
     // background-image: url("./default_bgc.jpg");
-    background-size: cover;
-    background-color: #2e2e2e;
-    padding:0px 20px;
+    height: 100%;
+    padding: 0px 20px;
     // backdrop-filter: brightness(60%);
 
     .main-content {
-        width: 1064px;
+        width: 1074px;
         height: 100%;
         // backdrop-filter:  blur(6px) saturate(100%);
         // background-color: rgba(255, 255, 255, 0.25) !important;

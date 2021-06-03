@@ -7,12 +7,21 @@ export default {
             method: "get"
         })
     },
-    getHomeBannerData(){ //获取首页轮播信息
+    getHomeBannerData() { //获取首页轮播信息
         return axios.request({
-            method:"get",
-            url:"/banner",
-            params:{
-                type:0
+            method: "get",
+            url: "/banner",
+            params: {
+                type: 0
+            }
+        })
+    },
+    getReMusicData(limit) { //获取每日推荐新歌
+        return axios.request({
+            method: "get",
+            url: "/personalized/newsong",
+            params: {
+                limit
             }
         })
     }
