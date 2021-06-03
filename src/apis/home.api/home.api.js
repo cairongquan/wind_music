@@ -24,5 +24,14 @@ export default {
                 limit
             }
         })
+    },
+    getRecommend(limit) {//获取推荐歌单
+        return axios.request({
+            method: 'get',
+            url: '/personalized',
+            params: {
+                limit,
+            }
+        })
     }
 }
