@@ -16,7 +16,7 @@
             <div
               class="play-icon"
               :style="{
-                backdropFilter: item.isShowPlayIcon ? 'blur(2px)' : '',
+                backdropFilter: item.isShowPlayIcon ? 'blur(3.5px)' : '',
               }"
             >
               <i

@@ -43,4 +43,10 @@ export default {
             }
         })
     },
+    getReMv() { //获取推荐Mv
+        return axios.request({
+            method: "get",
+            url: "/personalized/mv",
+        })
+    }
 }

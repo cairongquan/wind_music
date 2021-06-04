@@ -9,6 +9,8 @@
       <re-music></re-music>
       <!-- 独家放送 -->
       <exclusive-broad-cast></exclusive-broad-cast>
+      <!-- 推荐MV -->
+      <re-mv></re-mv>
     </div>
   </div>
 </template>
@@ -19,6 +21,7 @@ import bannerCom from "../../components/banner/banner.vue";
 import reMusic from "../../components/recommendedMusic/recommendedMusic.vue";
 import reCover from "../../components/recommendCover/recommendItem.vue";
 import exclusiveBroadCast from "../../components/exclusiveBroadcast/exclusiveBroadcast.vue";
+import reMv from "../../components/recommendMv/recommendMv.vue";
 
 import homeJS from "./home";
 export default {
@@ -27,6 +30,7 @@ export default {
     "re-music": reMusic,
     "re-cover": reCover,
     "exclusive-broad-cast": exclusiveBroadCast,
+    "re-mv": reMv,
   },
   ...homeJS,
 };

@@ -1,0 +1,109 @@
+#re-mv-box {
+    padding: 30px 0px;
+
+    .content-main-box {
+        user-select: none;
+        padding: 20px 0px;
+        display: flex;
+
+        .content-item-box {
+            overflow: hidden;
+            user-select: none;
+            width: 24%;
+            height: 240px;
+            margin: 0px 10px;
+            position: relative;
+            transition: all 200ms ease-in-out;
+            cursor: pointer;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+
+            .cover-box {
+                width: 100%;
+                height: 180px;
+                background: no-repeat;
+                background-size: cover;
+                overflow: hidden;
+                transition: all ease-in-out 200ms;
+                border-radius: 6px;
+
+                img {
+                    transition: 180ms ease-in-out all;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+
+            .tags-box {
+                position: absolute;
+                width: 100%;
+                height: 50px;
+                top: 0;
+                left: 0;
+                z-index: 0;
+                background-color: rgba(0, 0, 0, .56);
+                transition: all ease-in-out 200ms;
+
+                .tags-box-child-box {
+                    width: 230px;
+                    color: #fff;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    text-align: left;
+                    padding: 0px 10px;
+                    font-size: 13px;
+                }
+            }
+
+
+
+            .upAnimation {
+                transform: translateY(-50px);
+            }
+
+            .downAnimation {
+                transform: translateY(0px);
+            }
+
+
+
+            .mv-info-box {
+                user-select: none;
+                padding-top: 5px;
+
+                .mv-name {
+                    cursor: pointer;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    color: #cacaca;
+                    font-size: 15px;
+                    transition: 200ms ease-in-out all;
+                }
+
+                .mv-name:hover {
+                    color: #fff;
+                }
+
+                .artistName-box {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    padding-top: 3px;
+                    cursor: pointer;
+                    font-size: 12.4px;
+                    color: #818787;
+                    transition: 200ms ease-in-out all;
+                }
+
+                .artistName-box:hover {
+                    color: #a8a8a8;
+                }
+            }
+        }
+    }
+}
