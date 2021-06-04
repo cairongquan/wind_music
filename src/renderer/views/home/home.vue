@@ -7,6 +7,8 @@
       <re-cover></re-cover>
       <!-- 推荐音乐 -->
       <re-music></re-music>
+      <!-- 推荐MV -->
+      <re-mv></re-mv>
     </div>
   </div>
 </template>
@@ -16,6 +18,7 @@
 import bannerCom from "../../components/banner/banner.vue";
 import reMusic from "../../components/recommendedMusic/recommendedMusic.vue";
 import reCover from "../../components/recommendCover/recommendItem.vue";
+import reMv from "../../components/recommendMv/recommendMv.vue";
 
 import homeJS from "./home";
 export default {
@@ -23,6 +26,7 @@ export default {
     "banner-com": bannerCom,
     "re-music": reMusic,
     "re-cover": reCover,
+    "re-mv": reMv,
   },
   ...homeJS,
 };
