@@ -4,6 +4,7 @@ import axios from 'axios'
 import App from './App'
 import router from './router'
 import store from './store'
+import "./public/style/public.scss"
 
 axios.defaults.baseURL = "http://localhost:3000/"
 

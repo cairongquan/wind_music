@@ -33,5 +33,14 @@ export default {
                 limit,
             }
         })
-    }
+    },
+    getExclusiveCast(limit) {//获取独家放送
+        return axios.request({
+            method: 'get',
+            url: '/personalized/privatecontent/list',
+            params: {
+                limit,
+            }
+        })
+    },
 }

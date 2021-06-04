@@ -8,7 +8,7 @@ export default new Router({
     { //主页
       path: '/',
       name: 'home',
-      component: require('@/views/home/home.vue').default
+      component: require('@/renderer/views/home/home.vue').default
     }
   ]
 })
