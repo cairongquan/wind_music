@@ -1,12 +1,7 @@
 <template>
   <!-- 推荐音乐 -->
   <div id="main-box-reMusic">
-    <header class="header-title">
-      <div class="main-title">
-        <span>推荐音乐</span>
-        <i class="iconfont icon-jiantou"></i>
-      </div>
-    </header>
+  <home-title-com>最新音乐</home-title-com>
     <div class="content-show-list-box">
       <div class="main-content-show-box">
         <div
@@ -48,7 +43,11 @@
 
 <script>
 import reMuisicJS from "./recommendedMusic";
+import homeTitleCom from "../homeTitleCom/homeTitleCom.vue";
 export default {
+  components:{
+    "home-title-com":homeTitleCom
+  },
   ...reMuisicJS,
 };
 </script>

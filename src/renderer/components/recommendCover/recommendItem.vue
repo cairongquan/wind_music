@@ -1,6 +1,8 @@
 <template>
+  <div>
+    <home-title>每日推荐歌单</home-title>
   <div id="recommend">
-    <div v-for="item in list">
+    <div v-for="item in list" style="height: 220px">
       <div class="item">
         <div
           ref="musicBox"
@@ -27,10 +29,15 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 <script>
+import homeTitleCom from "../homeTitleCom/homeTitleCom.vue";
 import recommendJS from "./recommendItem";
 export default {
+  components:{
+    "home-title":homeTitleCom
+  },
   ...recommendJS,
 };
 </script>

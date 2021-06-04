@@ -2,7 +2,7 @@ import homeApi from "../../../apis/home.api/home.api";
 export default {
     data() {
         return {
-            limit: 10,
+            limit: 12,
             list: [],
 
         }

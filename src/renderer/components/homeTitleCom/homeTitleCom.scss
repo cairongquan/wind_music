@@ -1,0 +1,35 @@
+.header-title {
+  height: 30px;
+  line-height: 30px;
+  color: #d0d0d0;
+  font-size: 24px;
+  user-select: none;
+
+  .main-title {
+    font-weight: 600;
+    transition: 210ms ease-in-out all;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    width: 180px;
+
+    i {
+      transition: all 200ms ease-in-out;
+      font-weight: 600;
+      margin-left: 5px;
+    }
+
+    .leftMoveIcon{
+      transform: translateX(0px);
+      font-weight: 100;
+    }
+    .rightMoveIcon{
+      font-weight: 600;
+      transform: translateX(10px);
+    }
+  }
+
+  .main-title:hover {
+    color: #fff;
+  }
+}
