@@ -1,99 +1,94 @@
 #main-box-reMusic {
-    width: 1070px;
+  width: 1070px;
 
+  .content-show-list-box {
+    padding: 10px 0px;
 
+    // 主要内容盒子
+    .main-content-show-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      // 单个盒子
+      .content-item-box {
+        width: 32%;
+        padding: 10px 7px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 6px;
+        overflow: hidden;
 
+        .music-cove-main-box {
+          width: 60px;
+          height: 60px;
+          position: relative;
 
-    .content-show-list-box {
-        padding: 10px 0px;
+          .play-icon {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            line-height: 60px;
+            color: #ec4141;
+            backdrop-filter: blur(0px);
+            border-radius: 50%;
+            overflow: hidden;
+            transition: all .7s ease;
 
-        // 主要内容盒子
-        .main-content-show-box {
-            display: flex;
-            flex-wrap: wrap;
-
-            // 单个盒子
-            .content-item-box {
-                width: 32%;
-                padding: 10px 7px;
-                display: flex;
-                align-items: center;
-                transition: all 180ms ease-in-out;
-                cursor: pointer;
-                border-radius: 6px;
-                overflow: hidden;
-
-                .music-cove-main-box {
-                    width: 60px;
-                    height: 60px;
-                    position: relative;
-
-                    .play-icon {
-                        width: 60px;
-                        height: 60px;
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        text-align: center;
-                        line-height: 60px;
-                        color: #ec4141;
-                        backdrop-filter: blur(0px);
-                        border-radius: 50%;
-                        overflow: hidden;
-                        transition: all .7s ease;
-
-                        i {
-                            font-size: 25px;
-                            transition: .25s ease-in-out all;
-                        }
-                    }
-
-                    .music-cover-box {
-                        width: 60px;
-                        height: 60px;
-                        user-select: none;
-                        border-radius: 3.5px;
-                    }
-                }
-
-
-
-                .music-info-box {
-                    color: #d4d4d4;
-                    padding: 0px 10px;
-                    user-select: none;
-
-                    .music-name {
-                        display: -webkit-box;
-                        -webkit-line-clamp: 1;
-                        overflow: hidden;
-                        -webkit-box-orient: vertical;
-
-                        .music-name-v {
-                            font-size: 13px;
-                            color: #666666;
-                        }
-                    }
-
-                    .music-artists {
-                        display: -webkit-box;
-                        margin-top: 10px;
-                        -webkit-line-clamp: 1;
-                        overflow: hidden;
-                        -webkit-box-orient: vertical;
-
-                        .music-artists-text {
-                            color: #666666;
-                            font-size: 13px;
-                        }
-                    }
-                }
+            i {
+              font-size: 25px;
+              transition: .25s ease-in-out all;
             }
+          }
 
-            .content-item-box:hover {
-                background-color: #3b3b3b;
-            }
+          .music-cover-box {
+            width: 60px;
+            height: 60px;
+            user-select: none;
+            border-radius: 3.5px;
+          }
         }
+
+
+        .music-info-box {
+          color: #d4d4d4;
+          padding: 0px 10px;
+          user-select: none;
+
+          .music-name {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+
+            .music-name-v {
+              font-size: 13px;
+              color: #666666;
+            }
+          }
+
+          .music-artists {
+            display: -webkit-box;
+            margin-top: 10px;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+
+            .music-artists-text {
+              color: #666666;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+
+      .content-item-box:hover {
+        background-color: #3b3b3b;
+      }
     }
+  }
 }

@@ -1,27 +1,27 @@
 <template>
   <!-- 推荐音乐 -->
   <div id="main-box-reMusic">
-  <home-title-com>最新音乐</home-title-com>
+    <home-title-com>最新音乐</home-title-com>
     <div class="content-show-list-box">
       <div class="main-content-show-box">
         <div
-          @mousemove="item.isShowPlayIcon = true"
-          @mouseleave="item.isShowPlayIcon = false"
-          class="content-item-box"
-          v-for="(item, index) in reMuisicData"
-          :key="index"
+            @mousemove="item.isShowPlayIcon = true"
+            @mouseleave="item.isShowPlayIcon = false"
+            class="content-item-box"
+            v-for="(item, index) in reMuisicData"
+            :key="index"
         >
           <div class="music-cove-main-box">
-            <img :src="item.picUrl" alt="歌曲封面" class="music-cover-box" />
+            <img :src="item.picUrl" alt="歌曲封面" class="music-cover-box"/>
             <div
-              class="play-icon"
-              :style="{
+                class="play-icon"
+                :style="{
                 backdropFilter: item.isShowPlayIcon ? 'blur(3.5px)' : '',
               }"
             >
               <i
-                class="iconfont icon-play"
-                :style="{ opacity: item.isShowPlayIcon ? 1 : 0 }"
+                  class="iconfont icon-play"
+                  :style="{ opacity: item.isShowPlayIcon ? 1 : 0 }"
               ></i>
             </div>
           </div>
@@ -44,9 +44,10 @@
 <script>
 import reMuisicJS from "./recommendedMusic";
 import homeTitleCom from "../homeTitleCom/homeTitleCom.vue";
+
 export default {
-  components:{
-    "home-title-com":homeTitleCom
+  components: {
+    "home-title-com": homeTitleCom
   },
   ...reMuisicJS,
 };

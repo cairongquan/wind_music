@@ -1,50 +1,113 @@
+
 .exclusive {
+  width: 2160px;
+  height: 240px;
+  padding-top: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  transition: all ease-in-out 200ms;
+  transform: translateX(0px);
+  position: relative;
+}
+
+
+.dot-box {
+  padding-top: 20px;
+  height: 20px;
+  width: 100%;
+  justify-content: center;
+
+  ul {
     display: flex;
+    justify-content: center;
+
     width: 100%;
-    height: 240px;
-    justify-content: space-between;
-    padding-top: 10px;
+    list-style: none;
+
+    li {
+      transition: all 200ms ease-in-out;
+      margin: 0px 8px;
+      background-color: rgba(50, 54, 56, .6);
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+    }
+
+    li:hover {
+      background-color: #ec4141;
+    }
+  }
+}
+
+#main-box-exB {
+  width: 100%;
+  padding: 30px 0px;
+  overflow: hidden;
 }
 
 .exclusive-item {
-    position: relative;
-    width: 345px;
-    height: 245px;
-    cursor: pointer;
-    overflow: hidden;
-    // border: 1px solid red;
+  border-radius: 5.45px;
+  transition: all ease-in-out 360ms;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  width: 345px;
+  height: 245px;
+  cursor: pointer;
+}
 
-}
 .exclusive-item img {
-    width: 345px;
-    height: 190px;
-    border-radius: $border_main_radius;
+  filter: blur(0px);
+  width: 345px;
+  height: 190px;
+  border-radius: $border_main_radius;
+  overflow: hidden;
+  transition: ease-in-out 300ms all;
 }
+
 .exclusive-item span {
-    transition: ease 200ms color;
-    word-break: break-all;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-    color: rgb(177, 168, 168);
-    padding-top: 8px;
+  transition: ease 200ms all;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  color: rgb(177, 168, 168);
+  padding-top: 8px;
 }
+
 .exclusive-item:hover span {
-    transition: 0.2s;
-    color: #fff;
+  transition: 0.2s;
+  color: #fff;
 }
+
+.play-icon-box {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 280ms ease-in-out;
+  font-weight: 600;
+  line-height: 50%;
+  color: #ec4141;
+  opacity: 0;
+}
+
 .player-img {
-    border: 1px solid red;
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    text-align: center;
-    line-height: 25px;
-    color: red;
-    border-radius: 50%;
-    // background-color: black;
+  border: 1px solid red;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-align: center;
+  line-height: 25px;
+  color: red;
+  border-radius: 50%;
+  // background-color: black;
 }

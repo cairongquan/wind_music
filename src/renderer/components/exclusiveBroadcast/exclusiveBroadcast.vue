@@ -1,20 +1,31 @@
 <template>
-  <div>
+  <div id="main-box-exB">
     <home-title-com>独家放送</home-title-com>
-    <div class="exclusive">
-      <div v-for="item in list" class="exclusive-item">
-        <img :src="item.sPicUrl" alt="" />
-        <div class="player-img"><i class="iconfont icon-video"></i></div>
+    <ul class="exclusive">
+      <li @mouseover="itemMouseOver(index)" @mouseleave="itemMouseLeave(index)" v-for="(item,index) in list"
+          class="exclusive-item"
+          :style="{transform:transtionStr}" :key="index">
+        <img :style="{ filter: item.isShowIcon ? 'blur(2px)' : ''}" :src="item.sPicUrl" alt="封面"/>
+        <div class="play-icon-box" :style="{opacity: item.isShowIcon?1:0}">
+          <i class="iconfont icon-play" style="font-size: 49px;"></i>
+        </div>
         <div>
           <span>{{ item.copywriter }}</span>
         </div>
-      </div>
+      </li>
+    </ul>
+    <div class="dot-box">
+      <ul>
+        <li :style="{backgroundColor:item-1 === currentIndex?'#ec4141':''}" @mouseover="jumpEvent(item)"
+            @mouseleave="leaveEvent()" v-for="item in list.length-2" :key="item"></li>
+      </ul>
     </div>
   </div>
 </template>
 <script>
 import homeTitleCom from "../homeTitleCom/homeTitleCom.vue";
 import exclusiveBroadcastJS from "./exclusiveBroadcast.js";
+
 export default {
   components: {
     homeTitleCom,
