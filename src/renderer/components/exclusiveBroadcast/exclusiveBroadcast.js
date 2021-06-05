@@ -8,6 +8,7 @@ export default {
             currentIndex: 0, //当前第一个index
             transtionStr: "translateX(0px)", //自变量边偏移距离
             timer: null,//计时器
+            finalArrayLength: 0,
         };
     },
     methods: {
@@ -17,6 +18,7 @@ export default {
                 item["isShowIcon"] = false;
             })
             this.list = res.result;
+            this.finalArrayLength = this.list.length - 2;
         },
         play() {
             this.timer = setInterval(() => {

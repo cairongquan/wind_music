@@ -17,7 +17,7 @@
     <div class="dot-box">
       <ul>
         <li :style="{backgroundColor:item-1 === currentIndex?'#ec4141':''}" @mouseover="jumpEvent(item)"
-            @mouseleave="leaveEvent()" v-for="item in list.length-2" :key="item"></li>
+            @mouseleave="leaveEvent()" v-for="(item,index) in finalArrayLength" :key="index"></li>
       </ul>
     </div>
   </div>

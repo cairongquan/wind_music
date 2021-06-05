@@ -1,0 +1,60 @@
+$main_color: #ec4141;
+$white_color: #d0d0d0;
+
+#main-songSheet-box {
+  padding: 40px;
+
+  #main-header-songSheet-box {
+    display: flex;
+
+    .header-cover-image-box {
+      width: 250px;
+      height: 250px;
+      border-radius: 6px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    //歌曲介绍 (右边栏)
+    .song-sheet-introduction-box {
+      padding: 0px 20px;
+
+      //歌曲名称
+      .song-name-box {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+        display: flex;
+        user-select: none;
+        color: #d0d0d0;
+        font-weight: 600;
+        font-size: 30px;
+        align-items: center;
+        //图标
+        .song-name-box-tag {
+          background-color: rgba(0, 0, 0, 0.1);
+          width: 35px;
+          height: 20px;
+          line-height: 22.4px;
+          text-align: center;
+          color: $main_color;
+          font-size: 13px;
+          font-weight: 100;
+          border-radius: 3.45px;
+          margin-right: 5.25px;
+          border: 1.2px solid $main_color;
+        }
+      }
+
+      //创建者名称
+      .song-name-creater-box {
+        display: flex;
+      }
+    }
+  }
+}

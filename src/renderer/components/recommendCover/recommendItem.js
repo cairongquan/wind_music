@@ -1,4 +1,5 @@
 import homeApi from "../../../apis/home.api/home.api";
+
 export default {
     data() {
         return {
@@ -16,16 +17,20 @@ export default {
             item.isShowIcon = false;
             this.$refs.musicBox.style = "filter: blur(0);";
         },
-        details() { },
+        details() {
+        },
         //获取推荐歌单
         async getRecommend() {
-            const { data: res } = await homeApi.getRecommend(this.limit);
-            res.result.forEach(item=>{
+            const {data: res} = await homeApi.getRecommend(this.limit);
+            res.result.forEach(item => {
                 item['isShowIcon'] = false;
             })
             this.list = res.result;
             // console.log(res);
         },
+        jumpToSheetInfoEvent(item) {
+            this.$router.push(`/songSheet/${item.id}`);
+        }
     },
     created() {
         this.getRecommend();
