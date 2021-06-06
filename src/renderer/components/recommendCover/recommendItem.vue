@@ -2,21 +2,21 @@
   <div>
     <home-title>每日推荐歌单</home-title>
     <div id="recommend">
-      <div v-for="(item, index) in list" style="height: 220px" :key="index">
+      <div @click="jumpToSheetInfoEvent(item)" v-for="(item, index) in list" style="height: 220px" :key="index">
         <div class="item">
           <div
-            ref="musicBox"
-            class="music"
-            @mouseenter="showImgs(item)"
-            @mouseleave="hiddenImgs(item)"
-            @click="details"
+              ref="musicBox"
+              class="music"
+              @mouseenter="showImgs(item)"
+              @mouseleave="hiddenImgs(item)"
+              @click="details"
           >
-            <img :src="item.picUrl" alt="歌单封面" />
+            <img :src="item.picUrl" alt="歌单封面"/>
             <div class="btnImg" :style="{ opacity: item.isShowIcon ? 1 : 0 }">
               <i class="iconfont icon-play"></i>
             </div>
             <div
-              :class="[
+                :class="[
                 'content-copy-writer',
                 item.isShowIcon ? 'downAimation' : 'upAnimation',
               ]"
@@ -34,6 +34,7 @@
 <script>
 import homeTitleCom from "../homeTitleCom/homeTitleCom.vue";
 import recommendJS from "./recommendItem";
+
 export default {
   components: {
     "home-title": homeTitleCom,

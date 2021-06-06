@@ -5,14 +5,14 @@
         user-select: none;
         padding: 20px 0px;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
 
         .content-item-box {
             overflow: hidden;
             user-select: none;
             width: 24%;
             height: 240px;
-            margin: 0px 10px;
+            margin: 0px 0px;
             position: relative;
             transition: all 200ms ease-in-out;
             cursor: pointer;
