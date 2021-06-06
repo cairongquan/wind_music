@@ -1,9 +1,20 @@
 module.exports = {
-    css: {
-      loaderOptions: {
-        scss: {
-          data: `@import "@/public/style/public.scss";`
+  configureWebpack: {
+    resolve: {
+      extensions: [".ts", ".tsx", ".js", ".json"],
+      alias: {}
+    },
+    module: {
+      rules: [
+        {
+          test: /\.tsx?$/,
+          loader: 'ts-loader',
+          exclude: /node_modules/,
+          options: {
+            appendTsSuffixTo: [/\.vue$/],
+          }
         }
-      }
+      ]
     }
-  }
+  },
+}

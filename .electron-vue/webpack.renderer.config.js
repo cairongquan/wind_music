@@ -86,6 +86,16 @@ let rendererConfig = {
         }
       },
       {
+        test: /\.ts$/,
+        use: {
+          loader: "ts-loader",
+          options: {
+            appendTsSuffixTo: [/\.vue$/]
+          }
+        },
+        exclude: /node_modules/
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         use: {
           loader: 'url-loader',
@@ -121,7 +131,7 @@ let rendererConfig = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new MiniCssExtractPlugin({filename: 'styles.css'}),
+    new MiniCssExtractPlugin({ filename: 'styles.css' }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, '../src/index.ejs'),
@@ -158,7 +168,7 @@ let rendererConfig = {
       '@': path.join(__dirname, '../src/'),
       'vue$': 'vue/dist/vue.esm.js'
     },
-    extensions: ['.js', '.vue', '.json', '.css', '.node','.ts']
+    extensions: ['.js', '.vue', '.json', '.css', '.node', '.ts']
   },
   target: 'electron-renderer'
 }

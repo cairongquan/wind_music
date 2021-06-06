@@ -9,6 +9,7 @@ export default {
             descriptionStrRealHeight: null,//歌单简介实际宽度
             pullIcon: "icon-xiala1",//下拉icon字符串
             isShowPullIcon: false,//是否展示下拉icon
+            songDataList: [],//歌曲数据
         }
     },
     props: {
@@ -20,11 +21,17 @@ export default {
         async getSongSheetData() { //获取歌单详情
             const { data: res } = await songSheetApi.getSongSheetInfo(this.id, this.collectionPersonNum);
             this.songSheetData = res;
-            this.$nextTick(() => {
+            this.$nextTick(() => { //计算歌曲详情高度
                 this.descriptionStrRealHeight = this.$refs.descriptionBox.scrollHeight;
                 this.descriptionStrRealHeight == this.descriptionStrHeight ? this.isShowPullIcon = false : this.isShowPullIcon = true;
             });
-            console.log(res);
+            console.log(res, '歌单信息');
+            this.getSongData(res.playlist.trackIds);
+        },
+        async getSongData(ids) { //获取歌曲信息列表
+            const { data: musicDetailData } = await songSheetApi.getDetailSong(ids);
+            this.songDataList = musicDetailData.songs;
+            console.log(this.songDataList, '歌曲列表数据');
         },
         DateFormatNumG(time, fmt) { //时间戳转换
             const t = new Date(time)

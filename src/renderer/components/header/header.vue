@@ -1,5 +1,8 @@
 <template>
   <div id="main-header">
+    <div class="logo-header-bxo">
+      <img :src="headerLogo" />
+    </div>
     <div class="btns-show-box">
       <div class="min-btn btn" @click="miniWindowEvent"></div>
       <div class="close-btn btn" @click="closeWindowEvent"></div>

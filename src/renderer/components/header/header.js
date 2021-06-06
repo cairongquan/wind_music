@@ -1,5 +1,10 @@
-import { ipcRenderer,remote } from 'electron';
+import { ipcRenderer, remote } from 'electron';
 export default {
+    data() {
+        return {
+            headerLogo: require("./header_logo.png")
+        }
+    },
     methods: {
         closeWindowEvent() { //关闭窗口事件
             ipcRenderer.send('close-window');

@@ -3,6 +3,7 @@
     <headerCom></headerCom>
     <div class="scroll-box-main">
       <router-view class="router-box"></router-view>
+      <testVue></testVue>
     </div>
   </div>
 </template>
@@ -27,8 +28,6 @@ export default {
   -webkit-user-drag: none; //禁止图片拖拽
 }
 
-
-
 #app {
   overflow-x: hidden;
   overflow-y: hidden;
@@ -45,17 +44,16 @@ export default {
     background-color: #2e2e2e;
   }
 
-  .scroll-box-main::-webkit-scrollbar-thumb{
+  .scroll-box-main::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: #3f3f3f;
-    box-shadow: 2px 2px 12px rgba(0,0,0,.1);
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
   }
 
-  .scroll-box-main::-webkit-scrollbar{
+  .scroll-box-main::-webkit-scrollbar {
     width: 8px;
-    height:1px;
+    height: 1px;
   }
-
 
   .router-box {
     background-color: #2e2e2e;
