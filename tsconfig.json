@@ -32,8 +32,11 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx", "src/renderer/main.js"
-, "src/vue-shim.d.ts"  ],
+    "tests/**/*.tsx",
+    "src/renderer/main",
+    "src/vue-shim.d.ts",
+    "src/renderer/components/tabsCom/tabsCom.js"
+  ],
   "exclude": [
     "node_modules"
   ]

@@ -16,7 +16,7 @@
         </div>
         <!--        创建者名称-->
         <div class="song-name-creater-box">
-          <div style="display:flex; align-items: center;">
+          <div style="display: flex; align-items: center">
             <div class="user-headPortrait-box">
               <img
                 :src="songSheetData.playlist.creator.avatarUrl"
@@ -89,13 +89,28 @@
         </div>
       </div>
     </header>
+    <!-- 主内容区域 -->
+    <tabs-com
+      :tabsData="[
+        `歌曲(${songSheetData.playlist.trackCount}首)`,
+        `评论(${unitChangeEvent(songSheetData.playlist.commentCount)})`,
+      ]"
+    >
+      <!-- 页面 -->
+      <div :slot="0"></div>
+      <div :slot="1"></div>
+    </tabs-com>
   </div>
 </template>
 
 <script>
 import songSheetJs from "./songSheetView.js";
+import tabsCom from "../../components/tabsCom/tabsCom.vue";
 
 export default {
+  components: {
+    "tabs-com": tabsCom
+  },
   ...songSheetJs,
 };
 </script>

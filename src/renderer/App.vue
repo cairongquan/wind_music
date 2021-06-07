@@ -3,13 +3,13 @@
     <headerCom></headerCom>
     <div class="scroll-box-main">
       <router-view class="router-box"></router-view>
-      <testVue></testVue>
     </div>
   </div>
 </template>
 
 <script>
 import headerCom from "./components/header/header.vue";
+
 export default {
   components: {
     headerCom,
@@ -22,7 +22,7 @@ export default {
 * {
   //字体库
   font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC",
-    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   margin: 0;
   padding: 0;
   -webkit-user-drag: none; //禁止图片拖拽
