@@ -16,7 +16,7 @@
         </div>
         <!--        创建者名称-->
         <div class="song-name-creater-box">
-          <div style="display:flex; align-items: center;">
+          <div style="display: flex; align-items: center">
             <div class="user-headPortrait-box">
               <img
                 :src="songSheetData.playlist.creator.avatarUrl"
@@ -89,13 +89,52 @@
         </div>
       </div>
     </header>
+    <!-- 主内容区域 -->
+    <div class="content-box-main">
+      <tabs-com
+        class="tab-box-left"
+        :tabsData="[
+          `歌曲(${songSheetData.playlist.trackCount}首)`,
+          `评论(${unitChangeEvent(songSheetData.playlist.commentCount)})`,
+        ]"
+      >
+        <!-- 页面 -->
+        <!-- 歌单列表 -->
+        <div :slot="0">
+          <song-list-com :songListData="songDataList"></song-list-com>
+        </div>
+        <!-- 评论 -->
+        <div :slot="1"></div>
+      </tabs-com>
+      <!-- 收藏盒子 -->
+      <div class="subscribers-box">
+        <div class="sub-title-header">
+          收藏者
+        </div>
+        <ul class="subscribers-box-mainUl">
+          <li
+            :key="index"
+            v-for="(item, index) in songSheetData.playlist.subscribers"
+          >
+            <img :src="item.avatarUrl" />
+            <span>{{ item.nickname }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import songSheetJs from "./songSheetView.js";
+import tabsCom from "../../components/tabsCom/tabsCom.vue";
+import songListCom from "../../components/songListCom/songListCom.vue";
 
 export default {
+  components: {
+    "tabs-com": tabsCom,
+    "song-list-com": songListCom,
+  },
   ...songSheetJs,
 };
 </script>

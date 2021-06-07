@@ -1,0 +1,137 @@
+$border_radius:5.45px;
+
+$defalut_text_color:#848484;
+$white_color: #d0d0d0;
+
+#main-song-list-box {
+    padding: 10px 0px;
+
+    // 顶部操作指示栏
+    .song-list-edit-box {
+        display: flex;
+        background-color: #2b2b2b;
+        height: 40px;
+        border-top-left-radius: $border_radius;
+        border-top-right-radius: $border_radius;
+
+        .ht-box {
+            line-height: 40px;
+            font-size: 13.5px;
+            color: #848484;
+            user-select: none;
+        }
+
+        .emit-box-null {
+            width: 8%;
+        }
+
+        .song-title-header {
+            width: 42%;
+            padding-right: 5px;
+        }
+
+        .song-author-header {
+            width: 20%;
+            padding-right: 5px;
+        }
+
+        .cover-header {
+            width: 20%;
+            padding-right: 5px;
+        }
+
+        .song-time-header {
+            width: 10%;
+        }
+    }
+
+    .main-list-show-box {
+        border-bottom-left-radius: $border_radius;
+        border-bottom-right-radius: $border_radius;
+        overflow: hidden;
+
+        .song-item-main-box {
+            display: flex;
+            width: 100%;
+
+            .item-th-box {
+                height: 60px;
+                line-height: 60px;
+            }
+
+            .track-icon {
+                user-select: none;
+                width: 8%;
+                text-align: center;
+                color: $defalut_text_color;
+
+                i {
+                    cursor: pointer;
+                }
+
+                i:hover {
+                    color: #fff;
+                }
+            }
+
+            .song-title-box {
+                padding-right: 5px;
+                color: $white_color;
+                width: 42%;
+                font-size: 16px;
+                user-select: none;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+
+                img {
+                    margin-right: 10px;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: $border_radius;
+                }
+            }
+
+            .song-author-box {
+                padding-right: 5px;
+                width: 20%;
+                user-select: none;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+                color: $defalut_text_color;
+
+                span:hover {
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+
+            .song-cover-box {
+                width: 20%;
+                padding-right: 5px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+                color: $defalut_text_color;
+                user-select: none;
+            }
+
+            .song-cover-box span:hover {
+                color: #fff;
+                cursor: pointer;
+            }
+
+            .song-time-box {
+                width: 10%;
+                user-select: none;
+                color: $defalut_text_color;
+            }
+        }
+    }
+}

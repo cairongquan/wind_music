@@ -3,13 +3,13 @@
     <headerCom></headerCom>
     <div class="scroll-box-main">
       <router-view class="router-box"></router-view>
-      <testVue></testVue>
     </div>
   </div>
 </template>
 
 <script>
 import headerCom from "./components/header/header.vue";
+
 export default {
   components: {
     headerCom,

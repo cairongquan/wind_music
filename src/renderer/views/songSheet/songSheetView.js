@@ -3,7 +3,7 @@ import tools from "@/libs/tools.js"
 export default {
     data() {
         return {
-            collectionPersonNum: 10,//收藏人数
+            collectionPersonNum: 12,//收藏人数
             songSheetData: {},//专辑信息数据对象
             descriptionStrHeight: 20,//歌单简介高度
             descriptionStrRealHeight: null,//歌单简介实际宽度

@@ -3,7 +3,7 @@ $white_color: #d0d0d0;
 
 // 测试
 #main-songSheet-box {
-  padding: 40px;
+  padding: 20px;
 
   #main-header-songSheet-box {
     display: flex;
@@ -204,6 +204,77 @@ $white_color: #d0d0d0;
 
         i:hover {
           color: #fff;
+        }
+      }
+    }
+  }
+
+  .content-box-main {
+    display: flex;
+
+    .tab-box-left {
+      width: 80%;
+    }
+
+    .subscribers-box {
+      width: 250px;
+      padding-top: 40px;
+
+
+      .sub-title-header {
+        color: $white_color;
+        padding-bottom: 20px;
+        font-size: 21px;
+        text-align: center;
+        user-select: none;
+      }
+
+      .subscribers-box-mainUl {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+
+
+        li {
+          user-select: none;
+          width: 110px;
+          text-align: center;
+          margin-top: 0;
+          color: $white_color;
+          position: relative;
+          height: 100px;
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: block;
+            cursor: pointer;
+            transition: all ease 250ms;
+          }
+
+          span {
+            margin-top: 5px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+            transition: all ease 250ms;
+            margin-top: 65px;
+          }
+
+          img:hover {
+            filter: blur(1px);
+          }
+
+          span:hover {
+            cursor: pointer;
+            color: #fff;
+          }
         }
       }
     }
