@@ -20,4 +20,23 @@ export default {
             }
         })
     },
+    getDynamicInfo(id) { //获取歌单详情数据
+        return axios.request({
+            url: "/playlist/detail/dynamic",
+            method: "get",
+            params: {
+                id
+            }
+        })
+    },
+    getSongSheetComment(id, limit) { //获取歌单评论列表数据
+        return axios.request({
+            url: "/comment/playlist",
+            method: "get",
+            params: {
+                id,
+                limit
+            }
+        })
+    }
 }

@@ -104,7 +104,9 @@
           <song-list-com :songListData="songDataList"></song-list-com>
         </div>
         <!-- 评论 -->
-        <div :slot="1"></div>
+        <div :slot="1">
+          <commit-com :commitData="commitArrayData"></commit-com>
+        </div>
       </tabs-com>
       <!-- 收藏盒子 -->
       <div class="subscribers-box">
@@ -127,11 +129,14 @@
 import songSheetJs from "./songSheetView.js";
 import tabsCom from "../../components/tabsCom/tabsCom.vue";
 import songListCom from "../../components/songListCom/songListCom.vue";
+import commitCom from "../../components/commitCom/commitCom.vue"
+
 
 export default {
   components: {
     "tabs-com": tabsCom,
     "song-list-com": songListCom,
+    "commit-com": commitCom
   },
   ...songSheetJs,
 };

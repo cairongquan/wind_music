@@ -57,15 +57,13 @@ $transitionVal:all ease-in-out 250ms;
         border-bottom-right-radius: $border_radius;
         overflow: hidden;
 
-        .song-item-main-box:hover {
-            background-color: rgba(0, 0, 0, 0.1);
-        }
 
         .song-item-main-box {
             display: flex;
             width: 100%;
 
             .item-th-box {
+                font-size: 14px;
                 transition: $transitionVal;
                 height: 70px;
                 line-height: 70px;
@@ -93,9 +91,11 @@ $transitionVal:all ease-in-out 250ms;
                 overflow: hidden;
                 display: flex;
                 align-items: center;
+
                 font-size: 14.5px;
 
                 span {
+                    cursor: pointer;
                     height: 100%;
                     display: block;
                     user-select: none;
@@ -103,7 +103,6 @@ $transitionVal:all ease-in-out 250ms;
                     -webkit-box-orient: vertical;
                     -webkit-line-clamp: 1;
                     overflow: hidden;
-                    width: 300px;
                     font-size: 12px;
                     transition: $transitionVal;
                 }

@@ -10,6 +10,7 @@ export default {
             pullIcon: "icon-xiala1",//下拉icon字符串
             isShowPullIcon: false,//是否展示下拉icon
             songDataList: [],//歌曲数据
+            commitArrayData: [],//评论歌单数据
         }
     },
     props: {
@@ -27,11 +28,16 @@ export default {
             });
             console.log(res, '歌单信息');
             this.getSongData(res.playlist.trackIds);
+            this.getSonSheetDynamic();
         },
         async getSongData(ids) { //获取歌曲信息列表
             const { data: musicDetailData } = await songSheetApi.getDetailSong(ids);
             this.songDataList = musicDetailData.songs;
             console.log(this.songDataList, '歌曲列表数据');
+        },
+        async getSonSheetDynamic() { //获取歌单评论
+            const { data: commitArrayData } = await songSheetApi.getSongSheetComment(this.id, 20);
+            this.commitArrayData = commitArrayData;
         },
         DateFormatNumG(time, fmt) { //时间戳转换
             const t = new Date(time)

@@ -15,7 +15,7 @@
         class="song-item-main-box"
         v-for="(item, index) in songListData"
         :key="index"
-        :style="{ backgroundColor: index % 2 == 0 ? '#2e2e2e' : '#2b2b2b' }"
+        :style="{ backgroundColor: index % 2 == 0 ? '' : '#2b2b2b' }"
       >
         <!-- 收藏按钮盒子 -->
         <div
@@ -42,9 +42,12 @@
             }"
             :src="item.al.picUrl"
           />
-          <span :style="{ fontSize: mode ? '16px' : '12px' }">{{
-            item.name
-          }}</span>
+          <span
+            :style="{
+              fontSize: mode ? '16px' : '12px',
+            }"
+            >{{ item.name }}</span
+          >
         </div>
         <!--歌手名称  -->
         <div
