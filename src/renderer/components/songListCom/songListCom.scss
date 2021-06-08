@@ -2,6 +2,7 @@ $border_radius:5.45px;
 
 $defalut_text_color:#848484;
 $white_color: #d0d0d0;
+$transitionVal:all ease-in-out 250ms;
 
 #main-song-list-box {
     padding: 10px 0px;
@@ -23,6 +24,12 @@ $white_color: #d0d0d0;
 
         .emit-box-null {
             width: 8%;
+            text-align: center;
+            line-height: 40px;
+
+            i {
+                cursor: pointer;
+            }
         }
 
         .song-title-header {
@@ -50,19 +57,24 @@ $white_color: #d0d0d0;
         border-bottom-right-radius: $border_radius;
         overflow: hidden;
 
+        .song-item-main-box:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
         .song-item-main-box {
             display: flex;
             width: 100%;
 
             .item-th-box {
-                height: 60px;
-                line-height: 60px;
+                transition: $transitionVal;
+                height: 70px;
+                line-height: 70px;
             }
 
             .track-icon {
                 user-select: none;
-                width: 8%;
                 text-align: center;
+                width: 8%;
                 color: $defalut_text_color;
 
                 i {
@@ -78,20 +90,32 @@ $white_color: #d0d0d0;
                 padding-right: 5px;
                 color: $white_color;
                 width: 42%;
-                font-size: 16px;
-                user-select: none;
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 1;
                 overflow: hidden;
                 display: flex;
                 align-items: center;
+                font-size: 14.5px;
+
+                span {
+                    height: 100%;
+                    display: block;
+                    user-select: none;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;
+                    overflow: hidden;
+                    width: 300px;
+                    font-size: 12px;
+                    transition: $transitionVal;
+                }
 
                 img {
                     margin-right: 10px;
-                    width: 40px;
-                    height: 40px;
-                    border-radius: $border_radius;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 3.45px;
+                    overflow: hidden;
+                    transition: $transitionVal;
+                    cursor: pointer;
                 }
             }
 
@@ -134,4 +158,5 @@ $white_color: #d0d0d0;
             }
         }
     }
+
 }

@@ -108,9 +108,7 @@
       </tabs-com>
       <!-- 收藏盒子 -->
       <div class="subscribers-box">
-        <div class="sub-title-header">
-          收藏者
-        </div>
+        <div class="sub-title-header">收藏者</div>
         <ul class="subscribers-box-mainUl">
           <li
             :key="index"
@@ -141,5 +139,5 @@ export default {
 
 <style lang="scss" scoped>
 @import "./songSheetView.scss";
-@import url("//at.alicdn.com/t/font_2585248_irhtrhy7ez.css");
+@import url("//at.alicdn.com/t/font_2585248_zlwl4kcb0r.css");
 </style>
