@@ -189,6 +189,7 @@ $white_color: #d0d0d0;
         }
 
         .content-box {
+          word-wrap: break-word;
           transition: all ease 300ms;
           padding-left: 10px;
           width: calc(100% - 60px);

@@ -36,8 +36,9 @@ export default {
             console.log(this.songDataList, '歌曲列表数据');
         },
         async getSonSheetDynamic() { //获取歌单评论
-            const { data: commitArrayData } = await songSheetApi.getSongSheetComment(this.id, 20);
+            const { data: commitArrayData } = await songSheetApi.getSongSheetComment(this.id, this.songSheetData.playlist.commentCount > 50 ? 50 : this.songSheetData.playlist.commentCount);
             this.commitArrayData = commitArrayData;
+            console.log(this.commitArrayData, '评论数据');
         },
         DateFormatNumG(time, fmt) { //时间戳转换
             const t = new Date(time)

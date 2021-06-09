@@ -11,7 +11,7 @@ $main_color:#ec4141;
         position: relative;
 
         .tab-item-box {
-            width: 130px;
+            width: 180px;
             margin-right: 50px;
             color: #d0d0d0;
             height: 40px;
@@ -31,7 +31,6 @@ $main_color:#ec4141;
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
-
         }
 
         .activeIndexColor {
