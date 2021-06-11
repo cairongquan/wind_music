@@ -30,7 +30,6 @@ export default {
 
 #app {
   overflow-x: hidden;
-  overflow-y: hidden;
   overflow: hidden;
   /* border-bottom-left-radius: 6.45px;
   border-bottom-right-radius: 6.45px; */
@@ -39,20 +38,19 @@ export default {
 
   .scroll-box-main {
     height: 700px;
-    overflow: auto;
+    overflow: scroll;
     overflow-x: hidden;
     background-color: #2e2e2e;
   }
 
   .scroll-box-main::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: #3f3f3f;
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    background-color: #686868;
   }
 
   .scroll-box-main::-webkit-scrollbar {
-    width: 8px;
-    height: 1px;
+    width: 11.5px;
+    height: auto;
   }
 
   .router-box {

@@ -61,6 +61,20 @@ $main_color: #ec4141;
 
     .content-box-item {
       width: 100%;
+      height: 590px;
+      overflow: scroll;
+      overflow-x: hidden;
+    }
+
+    .content-box-item::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #3f3f3f;
+      box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .content-box-item::-webkit-scrollbar {
+      width: 8px;
+      height: 1px;
     }
   }
 
