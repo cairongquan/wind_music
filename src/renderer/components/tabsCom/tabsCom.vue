@@ -3,37 +3,37 @@
     <!-- 顶部滑动栏 -->
     <header class="main-tabs-com-header">
       <div
-        ref="fatherItem"
-        :class="[
+          ref="fatherItem"
+          :class="[
           'tab-item-box',
           index == defaultIndex ? 'activeIndexColor' : '',
         ]"
-        v-for="(item, index) in tabsData"
-        :key="index"
-        @click="changeItemIndex(index)"
+          v-for="(item, index) in tabsData"
+          :key="index"
+          @click="changeItemIndex(index)"
       >
         {{ item }}
         <div ref="itemBox" class="none-position-box"></div>
       </div>
       <div
-        class="scroll-box"
-        :style="{ transform: `translateX(${offSetLeftArray[defaultIndex]}px)` }"
+          class="scroll-box"
+          :style="{ transform: `translateX(${offSetLeftArray[defaultIndex]}px)` }"
       ></div>
     </header>
 
     <!--内容主体区域  -->
     <div
-      class="main-content-box"
-      :style="{
+        class="main-content-box"
+        :style="{
         transform: `translateX(${defaultIndex * -50}%)`,
       }"
     >
       <div
-        class="content-box-item"
-        v-for="(item, index) in tabsData"
-        :key="index"
+          class="content-box-item"
+          v-for="(item, index) in tabsData"
+          :key="index"
       >
-        <slot :name="index"></slot>
+        <slot :name="index" ref="contentBox"></slot>
       </div>
     </div>
   </div>
@@ -41,6 +41,7 @@
 
 <script lang="js">
 import tabsComTs from "./tabsCom.js";
+
 export default {
   ...tabsComTs,
 };

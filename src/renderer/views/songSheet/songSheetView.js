@@ -1,5 +1,6 @@
 import songSheetApi from "../../../apis/songSheet.api/songSheet.api"
 import tools from "@/libs/tools.js"
+
 export default {
     data() {
         return {
@@ -20,7 +21,7 @@ export default {
     },
     methods: {
         async getSongSheetData() { //获取歌单详情
-            const { data: res } = await songSheetApi.getSongSheetInfo(this.id, this.collectionPersonNum);
+            const {data: res} = await songSheetApi.getSongSheetInfo(this.id, this.collectionPersonNum);
             this.songSheetData = res;
             this.$nextTick(() => { //计算歌曲详情高度
                 this.descriptionStrRealHeight = this.$refs.descriptionBox.scrollHeight;
@@ -31,12 +32,12 @@ export default {
             this.getSonSheetDynamic();
         },
         async getSongData(ids) { //获取歌曲信息列表
-            const { data: musicDetailData } = await songSheetApi.getDetailSong(ids);
+            const {data: musicDetailData} = await songSheetApi.getDetailSong(ids);
             this.songDataList = musicDetailData.songs;
             console.log(this.songDataList, '歌曲列表数据');
         },
         async getSonSheetDynamic() { //获取歌单评论
-            const { data: commitArrayData } = await songSheetApi.getSongSheetComment(this.id, this.songSheetData.playlist.commentCount > 50 ? 50 : this.songSheetData.playlist.commentCount);
+            const {data: commitArrayData} = await songSheetApi.getSongSheetComment(this.id, this.songSheetData.playlist.commentCount > 50 ? 50 : this.songSheetData.playlist.commentCount);
             this.commitArrayData = commitArrayData;
             console.log(this.commitArrayData, '评论数据');
         },
@@ -75,6 +76,8 @@ export default {
             }
             this.descriptionStrHeight = this.descriptionStrRealHeight;
             this.pullIcon = "icon-shang"
+        },
+        changeTabIndexHandle(index) {
         }
     },
     created() {

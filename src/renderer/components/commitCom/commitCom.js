@@ -21,8 +21,9 @@ export default {
             this.emojiData = emojiData;
         },
         echoContent(val, name) { //格式化评论
+            val = val.replace(/\[|]/g, '')
             this.emojiData.data.forEach(item => {
-                val = val.replace(`[${item.emjName}]`, `<img style="margin:0px 2px;width:16px;height:16px;vertical-align: middle;" src="${item.path}"/>`);
+                val = val.replace(new RegExp(`${item.emjName}`, 'g'), `<img style="margin: 0px 2px; width: 16px; height: 16px; vertical - align: middle; " src="${item.path} "/>`);
             });
             return `<span class="fn-name" style=" color: #74acdc;cursor: pointer;margin-right:10px;">${name}:</span>${val}`;
         },

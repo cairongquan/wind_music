@@ -18,6 +18,7 @@ export default {
         },
         changeItemIndex(index) {
             this.defaultIndex = index;
+            this.$emit("changeTabIndexHandle", index);
         }
     },
     created: function () {
