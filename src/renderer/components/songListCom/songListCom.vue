@@ -36,6 +36,7 @@
           }"
         >
           <img
+            @click="tapSongEvent(item)"
             :style="{
               height: mode ? '0px' : '45px',
               width: mode ? '0px' : '45px',
@@ -43,6 +44,7 @@
             :src="item.al.picUrl"
           />
           <span
+            @click="tapSongEvent(item)"
             :style="{
               fontSize: mode ? '16px' : '12px',
             }"

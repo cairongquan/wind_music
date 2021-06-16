@@ -6,7 +6,7 @@
  */
 
 /* eslint-disable */
-
+import '../renderer/store'
 // Install `electron-debug` with `devtron`
 require('electron-debug')({ showDevTools: true })
 

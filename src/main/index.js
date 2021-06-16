@@ -1,6 +1,5 @@
 import { app, BrowserWindow } from 'electron'
 import '../renderer/store'
-
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -22,18 +21,18 @@ function createWindow() {
    * Initial window options
    */
   mainWindow = new BrowserWindow({ //
-    height: 750,
+    height: 800,
     useContentSize: true,
     width: 1120,//宽
     frame: false,//无边框
     resizable: false,//用户可拖拽大小尺寸
     transparent: true, //背景是否透明
-    thickFrame:true,
+    thickFrame: true,
     webPreferences: {
       devTools: true,
       nodeIntegration: true,
       experimentalFeatures: true,
-      enableBlinkFeatures:"CSSBackdropfilter"
+      enableBlinkFeatures: "CSSBackdropfilter"
     }
   })
 
@@ -62,7 +61,7 @@ ipc.on('min-window', () => {
   mainWindow.minimize()
 })
 
-ipc.on('max',  ()=> {
+ipc.on('max', () => {
   if (mainWindow.isMaximized()) {
     return mainWindow.restore();
   } else {

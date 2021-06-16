@@ -4,15 +4,17 @@
     <div class="scroll-box-main">
       <router-view class="router-box"></router-view>
     </div>
+    <play-layout></play-layout>
   </div>
 </template>
 
 <script>
 import headerCom from "./components/header/header.vue";
-
+import playLayoutCom from "./mainComponents/playLayout.vue";
 export default {
   components: {
     headerCom,
+    "play-layout": playLayoutCom,
   },
   name: "wind_music",
 };
@@ -37,6 +39,7 @@ export default {
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
 
   .scroll-box-main {
+    position: relative;
     height: 700px;
     overflow: scroll;
     overflow-x: hidden;

@@ -21,6 +21,10 @@ export default {
             this.emojiData = emojiData;
         },
         echoContent(val, name) { //格式化评论
+            if (!val) {
+                console.log(name);
+                return "被删除"
+            }
             val = val.replace(/\[|]/g, '')
             this.emojiData.data.forEach(item => {
                 val = val.replace(new RegExp(`${item.emjName}`, 'g'), `<img style="margin: 0px 2px; width: 16px; height: 16px; vertical - align: middle; " src="${item.path} "/>`);

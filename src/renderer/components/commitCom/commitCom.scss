@@ -30,7 +30,7 @@ $main_color: #ec4141;
       border-radius: 5.45px;
       text-align: center;
       line-height: 40px;
-      background-color: #373737;
+
       color: $main_text_color;
       margin: 12px 0px;
       overflow: hidden;
@@ -41,7 +41,7 @@ $main_color: #ec4141;
       align-items: center;
       margin: 12px 0px;
       padding: 10px;
-      background-color: #373737;
+
       border-radius: 5.45px;
       overflow: hidden;
 
@@ -96,7 +96,6 @@ $main_color: #ec4141;
       align-items: center;
       margin: 12px 0px;
       padding: 10px;
-      background-color: #373737;
       border-radius: 5.45px;
       overflow: hidden;
 
@@ -142,6 +141,13 @@ $main_color: #ec4141;
               color: #fff;
             }
           }
+        }
+
+        .replied-conetnt-box {
+          border-radius: 5.45px;
+          padding-left: 10px;
+          padding-top: 0px;
+          background-color: #373737;
         }
       }
     }

@@ -1,3 +1,4 @@
+import { mapMutations } from 'vuex'
 export default {
     props: {
         songListData: {
@@ -20,6 +21,9 @@ export default {
         changeMode() {
             this.mode = !this.mode;
             this.modeIconnName = this.mode ? "icon-liebiao1" : "icon-liebiao";
+        },
+        tapSongEvent(val) {
+            this.$store.commit("changeMusicInfoHandle", val);
         }
     },
     created() {

@@ -1,21 +1,18 @@
 const state = {
-  main: 0
+  isPlaySong: false, //是否有歌曲信息
+  musicInfo: {
+  },
 }
 
 const mutations = {
-  DECREMENT_MAIN_COUNTER (state) {
-    state.main--
-  },
-  INCREMENT_MAIN_COUNTER (state) {
-    state.main++
+  changeMusicInfoHandle(state, val) {
+    state.musicInfo = val;
+    state.isPlaySong = true;
   }
 }
 
 const actions = {
-  someAsyncTask ({ commit }) {
-    // do something async
-    commit('INCREMENT_MAIN_COUNTER')
-  }
+
 }
 
 export default {

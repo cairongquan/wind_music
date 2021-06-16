@@ -4,8 +4,12 @@
       <img :src="headerLogo" />
     </div>
     <div class="btns-show-box">
-      <div class="min-btn btn" @click="miniWindowEvent"></div>
-      <div class="close-btn btn" @click="closeWindowEvent"></div>
+      <div class="min-btn btn" @click="miniWindowEvent">
+        <i class="iconfont icon-suoxiao"></i>
+      </div>
+      <div class="close-btn btn" @click="closeWindowEvent">
+        <i class="iconfont icon-quxiao"></i>
+      </div>
     </div>
   </div>
 </template>
@@ -19,5 +23,5 @@ export default {
 
 <style lang="scss" scoped>
 @import "./header.scss";
-@import url(//at.alicdn.com/t/font_2585248_8q19fz3hm56.css);
+@import url(//at.alicdn.com/t/font_2585248_izehd6db7fg.css);
 </style>

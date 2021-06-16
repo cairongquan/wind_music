@@ -81,7 +81,7 @@
             </div>
           </div>
           <div
-            v-show="item.beReplied.length !== 0"
+            v-if="item.beReplied.length !== 0"
             class="hot-commit-item-replied"
           >
             <img :src="item.user.avatarUrl" alt="用户头像" />
@@ -93,7 +93,15 @@
               ></div>
               <!-- 回复内容区域 -->
               <div class="replied-conetnt-box">
-                <div class="fn-conetnt-box">{{ item.beReplied.conetnt }}</div>
+                <div
+                  class="fn-conetnt-box"
+                  v-html="
+                    echoContent(
+                      item.beReplied[0].content,
+                      item.beReplied[0].user.nickname
+                    )
+                  "
+                ></div>
               </div>
               <!-- 评论其它 -->
               <div class="fn-content-other">
