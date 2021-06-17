@@ -1,6 +1,14 @@
 <template>
-  <div id="main-out-shongSheetList">
-
+  <div id="main-out-songSheetList">
+    <header class="sheet-list-head">
+      <div class="tag-item" v-for="(item,index) in tagDataArray" :key="index">
+        <span>{{item.tagName}}</span>
+        <img :src="item.emoji" alt="emoji">
+      </div>
+      <div class="tag-item">
+        <span>全部</span>
+      </div>
+    </header>
   </div>
 </template>
 
@@ -13,5 +21,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+@import "songSheetList.scss";
 </style>

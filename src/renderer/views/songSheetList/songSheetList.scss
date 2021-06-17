@@ -1,0 +1,42 @@
+#main-out-songSheetList {
+  padding: 15px;
+
+  .sheet-list-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    .tag-item {
+      width: 12%;
+      height: 50px;
+      border-radius: 25px;
+      border: 1.2px solid #4a4a4a;
+      line-height: 50px;
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      justify-content: center;
+      color: #d0d0d0;
+      user-select: none;
+      cursor: pointer;
+      transition: all ease-in-out 200ms;
+
+      img {
+        margin-left: 10px;
+        width: 30px;
+        height: 30px;
+        transition: all ease-in-out 200ms;
+      }
+    }
+
+    .tag-item:hover {
+      color: #ffffff;
+      background-color: rgba(255, 255, 255, .3);
+    }
+
+    .tag-item:hover img {
+      transform: rotate(28deg);
+    }
+  }
+}
