@@ -3,7 +3,8 @@ const path = require('path');
 export default {
     data() {
         return {
-            tagDataArray: []
+            activeTag: {}, //当前tag
+            tagDataArray: [],//tag数据
         }
     },
     methods: {
@@ -16,7 +17,6 @@ export default {
                     emoji: emojiArray[index].url
                 })
             });
-            console.log(this.tagDataArray);
         },
     },
     created() {

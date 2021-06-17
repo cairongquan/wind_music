@@ -1,6 +1,14 @@
 #main-out-songSheetList {
   padding: 15px;
 
+  .tag-name-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #d0d0d0;
+    user-select: none;
+    margin-left: 18px;
+  }
+
   .sheet-list-head {
     display: flex;
     flex-wrap: wrap;
@@ -8,7 +16,7 @@
     justify-content: center;
 
     .tag-item {
-      width: 12%;
+      width: 12.2%;
       height: 50px;
       border-radius: 25px;
       border: 1.2px solid #4a4a4a;
