@@ -1,8 +1,10 @@
-import { ipcRenderer, remote } from 'electron';
+import {ipcRenderer, remote} from 'electron';
+
 export default {
     data() {
         return {
-            headerLogo: require("./header_logo.png")
+            headerLogo: require("./header_logo.png"),
+            prowerWithLove: require("./prowWithLove.png")
         }
     },
     methods: {

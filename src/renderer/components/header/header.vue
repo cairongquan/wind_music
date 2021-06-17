@@ -1,7 +1,10 @@
 <template>
   <div id="main-header">
     <div class="logo-header-bxo">
-      <img :src="headerLogo" />
+      <img :src="headerLogo"/>
+    </div>
+    <div class="prow-with-love">
+      <img :src="prowerWithLove">
     </div>
     <div class="btns-show-box">
       <div class="min-btn btn" @click="miniWindowEvent">
@@ -16,6 +19,7 @@
 
 <script>
 import headerJS from "./header.js";
+
 export default {
   ...headerJS,
 };
