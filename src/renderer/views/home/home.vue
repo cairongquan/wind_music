@@ -24,6 +24,7 @@ import exclusiveBroadCast from "../../components/exclusiveBroadcast/exclusiveBro
 import reMv from "../../components/recommendMv/recommendMv.vue";
 
 import homeJS from "./home";
+
 export default {
   components: {
     "banner-com": bannerCom,

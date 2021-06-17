@@ -32,7 +32,8 @@ export default {
             this.getSonSheetDynamic();
         },
         async getSongData(ids) { //获取歌曲信息列表
-            const {data: musicDetailData} = await songSheetApi.getDetailSong(ids);
+            const tranIds = ids.map(item => item.id).join(",");
+            const {data: musicDetailData} = await songSheetApi.getDetailSong(tranIds);
             this.songDataList = musicDetailData.songs;
             console.log(this.songDataList, '歌曲列表数据');
         },

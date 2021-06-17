@@ -5,23 +5,25 @@
     <div class="content-show-list-box">
       <div class="main-content-show-box">
         <div
-            @mousemove="item.isShowPlayIcon = true"
-            @mouseleave="item.isShowPlayIcon = false"
-            class="content-item-box"
-            v-for="(item, index) in reMuisicData"
-            :key="index"
+          @mousemove="item.isShowPlayIcon = true"
+          @mouseleave="item.isShowPlayIcon = false"
+          class="content-item-box"
+          v-for="(item, index) in reMuisicData"
+          :key="index"
         >
           <div class="music-cove-main-box">
-            <img :src="item.picUrl" alt="歌曲封面" class="music-cover-box"/>
-            <div
-                class="play-icon"
-                :style="{
-                backdropFilter: item.isShowPlayIcon ? 'blur(3.5px)' : '',
+            <img
+              :src="item.picUrl"
+              :style="{
+                filter: item.isShowPlayIcon ? 'blur(1.5px)' : '',
               }"
-            >
+              alt="歌曲封面"
+              class="music-cover-box"
+            />
+            <div class="play-icon">
               <i
-                  class="iconfont icon-play"
-                  :style="{ opacity: item.isShowPlayIcon ? 1 : 0 }"
+                class="iconfont icon-play"
+                :style="{ opacity: item.isShowPlayIcon ? 1 : 0 }"
               ></i>
             </div>
           </div>

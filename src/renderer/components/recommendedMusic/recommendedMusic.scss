@@ -9,6 +9,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+
       // 单个盒子
       .content-item-box {
         width: 32%;
@@ -24,6 +25,10 @@
           height: 60px;
           position: relative;
 
+          img {
+            transition: all ease-in-out 250ms;
+          }
+
           .play-icon {
             width: 60px;
             height: 60px;
@@ -34,14 +39,13 @@
             text-align: center;
             line-height: 60px;
             color: #ec4141;
-            backdrop-filter: blur(0px);
             border-radius: 50%;
             overflow: hidden;
             transition: all .7s ease;
 
             i {
               font-size: 25px;
-              transition: .25s ease-in-out all;
+              transition: 200ms ease-in-out all;
             }
           }
 

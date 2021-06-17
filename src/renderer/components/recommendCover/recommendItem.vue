@@ -1,6 +1,6 @@
 <template>
   <div>
-    <home-title>每日推荐歌单</home-title>
+    <home-title :pageUrl="'/allSongSheet'">每日推荐歌单</home-title>
     <div id="recommend">
       <div @click="jumpToSheetInfoEvent(item)" v-for="(item, index) in list" style="height: 220px" :key="index">
         <div class="item">

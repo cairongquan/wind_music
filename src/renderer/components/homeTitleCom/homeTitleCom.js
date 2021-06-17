@@ -1,9 +1,19 @@
 export default {
-    data(){
+    props: ["pageUrl"],
+    data() {
         return {
-            isMoveTitle:false
+            isMoveTitle: false
         }
     },
-    methods:{
+    methods: {
+        jumpToPage() {
+            console.log(1);
+            this.$router.push(this.pageUrl);
+        },
+        details() {
+        }
+    },
+    created() {
+
     }
 }

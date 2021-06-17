@@ -17,6 +17,9 @@ export default {
             item.isShowIcon = false;
             this.$refs.musicBox.style = "filter: blur(0);";
         },
+        jumpToPage() {
+            this.$router.push("jumpToPage");
+        },
         details() {
         },
         //获取推荐歌单

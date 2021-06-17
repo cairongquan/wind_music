@@ -1,5 +1,5 @@
 <template>
-  <header class="header-title">
+  <header class="header-title" @click="jumpToPage">
     <div class="main-title" @mouseover="isMoveTitle=true" @mouseleave="isMoveTitle=false">
       <slot></slot>
       <i :class="['iconfont','icon-jiantou',isMoveTitle?'rightMoveIcon':'leftMoveIcon']"></i>

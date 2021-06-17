@@ -6,8 +6,10 @@ import router from './router'
 import store from './store'
 import "./public/style/public.scss"
 
-axios.defaults.baseURL = "http://localhost:3000/"
+Vue.prototype.$http = axios;
 
+
+axios.defaults.baseURL = "http://localhost:3000/"
 
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
@@ -16,8 +18,8 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  components: { App },
-  router,
-  store,
-  template: '<App/>'
+    components: {App},
+    router,
+    store,
+    template: '<App/>'
 }).$mount('#app')
