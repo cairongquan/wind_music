@@ -25,4 +25,9 @@ export default {
             return rt > 10 || !isAddZero(o) ? rt : `0${rt}`
         })
     },
+    getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值  0<1
+    }
 }

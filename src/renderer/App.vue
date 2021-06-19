@@ -4,7 +4,7 @@
     <div class="scroll-box-main">
       <router-view class="router-box"></router-view>
     </div>
-    <play-layout></play-layout>
+
   </div>
 </template>
 
