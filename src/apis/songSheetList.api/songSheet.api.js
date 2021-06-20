@@ -9,5 +9,15 @@ export default {
                 limit,
             }
         })
+    },
+    getSongSheetBannerData(cat) {
+        return axios.request({
+            url: "/top/playlist/highquality",
+            method: "get",
+            params: {
+                cat,
+                limit: 1
+            }
+        })
     }
 }

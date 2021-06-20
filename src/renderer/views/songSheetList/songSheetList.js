@@ -16,9 +16,22 @@ export default {
             songSheetListData: [], //歌单数据
             itemWidth: 210,//列宽度
             renderData: [],//页面渲染数据
+            bannerData: [],
         }
     },
     methods: {
+        async getBannerData() { //生成banner 数据
+            console.log(1);
+            const bannderTagArray = ["华语", "流行", "摇滚", "民谣", "电子", "轻音乐", "影视原声", "ACG"];
+            for (let i = 0; i < bannderTagArray.length; i++) {
+                const { data: res } = await songSheetListApi.getSongSheetBannerData(bannderTagArray[i]);
+                this.bannerData.push(res.playlists[0]);
+            };
+            console.log(this.bannerData);
+        },
+
+
+
         getEmojiData() { //创建tag数据 顶部筛选数据
             const textArray = ["欧美", "华语", "流行", "说唱", "摇滚", "民谣", "电子", "轻音乐", "影视原声", "ACG", "怀旧", "治愈", "旅行"];
             const emojiArray = JSON.parse(fs.readFileSync(path.join(__dirname, "db.json"), 'utf-8'));
@@ -33,7 +46,7 @@ export default {
             const { data: res } = await songSheetListApi.getSongSheetList(this.form);
             this.songSheetListData = res.playlists;
             this.songSheetListData.forEach(item => {
-                item["domHeight"] = tools.getRandomIntInclusive(150, 265);
+                item["domHeight"] = tools.getRandomIntInclusive(150, 270);
             })
             this.createWaterfallData();
         },
@@ -49,7 +62,6 @@ export default {
             this.songSheetListData.forEach(item => {
                 this.renderData[this.countMinHeightIndex()].push(item);
             });
-            console.log(this.renderData);
         },
         countMinHeightIndex() { //计算当前高度最小列index
             let heightArray = [];
@@ -70,8 +82,14 @@ export default {
             });
             return finalIndex;
         },
-
-
+        chooseTagEvent(tagName) { //切换tag事件
+            this.activeTag = tagName;
+            this.form.cat = this.activeTag;
+            this.getSongSheetList();
+        },
+        showSongSheetInfo(id) { //跳转歌单详情
+            this.$router.push(`/songSheet/${id}`)
+        },
         createDate(date) {
             return tools.DateFormatNumG(date, "Y-M-D");
         }
@@ -79,5 +97,6 @@ export default {
     created() {
         this.getSongSheetList();
         this.getEmojiData();
+        this.getBannerData();
     }
 }
