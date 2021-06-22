@@ -3,7 +3,7 @@ const path = require('path');
 
 import tools from "../../../libs/tools"
 import songSheetListApi from "../../../apis/songSheetList.api/songSheet.api";
-import {createDeflate} from "zlib";
+import { createDeflate } from "zlib";
 
 export default {
     data() {
@@ -27,11 +27,10 @@ export default {
         async getBannerData() { //生成banner 数据
             const bannderTagArray = ["华语", "流行", "摇滚", "民谣", "电子", "轻音乐", "影视原声", "ACG"];
             for (let i = 0; i < bannderTagArray.length; i++) {
-                const {data: res} = await songSheetListApi.getSongSheetBannerData(bannderTagArray[i]);
+                const { data: res } = await songSheetListApi.getSongSheetBannerData(bannderTagArray[i]);
                 this.bannerData.push(res.playlists[0]);
-            }
-            ;
-            this.playBannerEvent();
+            };
+            console.log(this.bannerData);
         },
         jumpToBanner(index) { //点击跳转bannerItem
             this.tranlateStr = `translateX(${-1080 * index}px)`
@@ -49,7 +48,7 @@ export default {
             });
         },
         async getSongSheetList() { //获取歌单列表
-            const {data: res} = await songSheetListApi.getSongSheetList(this.form);
+            const { data: res } = await songSheetListApi.getSongSheetList(this.form);
             this.songSheetListData = res.playlists;
             this.songSheetListData.forEach(item => {
                 item["domHeight"] = tools.getRandomIntInclusive(180, 270);

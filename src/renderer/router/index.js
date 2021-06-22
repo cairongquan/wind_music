@@ -5,12 +5,12 @@ Vue.use(Router)
 
 export default new Router({
     routes: [
-        {
-            path: "/",
-            redirect: "/allSongSheet"
-        },
+        // {
+        //     path: "/",
+        //     redirect: "/allSongSheet"
+        // },
         { //主页
-            path: '/1',
+            path: '/',
             name: 'home',
             component: require('@/renderer/views/home/home.vue').default
         },
