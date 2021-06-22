@@ -3,7 +3,8 @@ const path = require('path');
 
 import tools from "../../../libs/tools"
 import songSheetListApi from "../../../apis/songSheetList.api/songSheet.api";
-import { createDeflate } from "zlib";
+import {createDeflate} from "zlib";
+
 export default {
     data() {
         return {
@@ -17,21 +18,26 @@ export default {
             itemWidth: 210,//列宽度
             renderData: [],//页面渲染数据
             bannerData: [],
+            activeBannerIndex: 0, //活动banner图index
+            tranlateStr: "translateY(0px)",
         }
     },
     methods: {
+        //banner图事件
         async getBannerData() { //生成banner 数据
-            console.log(1);
             const bannderTagArray = ["华语", "流行", "摇滚", "民谣", "电子", "轻音乐", "影视原声", "ACG"];
             for (let i = 0; i < bannderTagArray.length; i++) {
-                const { data: res } = await songSheetListApi.getSongSheetBannerData(bannderTagArray[i]);
+                const {data: res} = await songSheetListApi.getSongSheetBannerData(bannderTagArray[i]);
                 this.bannerData.push(res.playlists[0]);
-            };
-            console.log(this.bannerData);
+            }
+            ;
+            this.playBannerEvent();
         },
-
-
-
+        jumpToBanner(index) { //点击跳转bannerItem
+            this.tranlateStr = `translateX(${-1080 * index}px)`
+            this.activeBannerIndex = index;
+        },
+        //歌单主题生成
         getEmojiData() { //创建tag数据 顶部筛选数据
             const textArray = ["欧美", "华语", "流行", "说唱", "摇滚", "民谣", "电子", "轻音乐", "影视原声", "ACG", "怀旧", "治愈", "旅行"];
             const emojiArray = JSON.parse(fs.readFileSync(path.join(__dirname, "db.json"), 'utf-8'));
@@ -43,15 +49,13 @@ export default {
             });
         },
         async getSongSheetList() { //获取歌单列表
-            const { data: res } = await songSheetListApi.getSongSheetList(this.form);
+            const {data: res} = await songSheetListApi.getSongSheetList(this.form);
             this.songSheetListData = res.playlists;
             this.songSheetListData.forEach(item => {
-                item["domHeight"] = tools.getRandomIntInclusive(150, 270);
+                item["domHeight"] = tools.getRandomIntInclusive(180, 270);
             })
             this.createWaterfallData();
         },
-
-
         createWaterfallData() { //生成瀑布流数据
             const mainBoxWidth = document.querySelector("#main-out-songSheetList").offsetWidth;
             const column = Math.floor(mainBoxWidth / 220);
