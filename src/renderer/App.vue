@@ -1,10 +1,9 @@
 <template>
   <div id="app">
-    <headerCom></headerCom>
     <div class="scroll-box-main">
+      <headerCom></headerCom>
       <router-view class="router-box"></router-view>
     </div>
-
   </div>
 </template>
 
@@ -23,8 +22,10 @@ export default {
 <style lang="scss">
 * {
   //字体库
-  font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC",
-    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: arlow, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei,
+    Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif,
+    microsoft uighur;
   margin: 0;
   padding: 0;
   -webkit-user-drag: none; //禁止图片拖拽
@@ -33,22 +34,19 @@ export default {
 #app {
   overflow-x: hidden;
   overflow: hidden;
+  overflow-y: hidden;
   /* border-bottom-left-radius: 6.45px;
   border-bottom-right-radius: 6.45px; */
-  border-radius: 5.5px;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
 
   .scroll-box-main {
+    background-color: #fff;
     position: relative;
-    height: 700px;
-    overflow: scroll;
+    height: calc(100vh);
     overflow-x: hidden;
-    background-color: #2e2e2e;
   }
 
   .scroll-box-main::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #686868;
+    background-color: #e1e1e1;
   }
 
   .scroll-box-main::-webkit-scrollbar {
@@ -57,7 +55,8 @@ export default {
   }
 
   .router-box {
-    background-color: #2e2e2e;
+    margin-top: 50px;
+    width: 100%;
   }
 }
 </style>

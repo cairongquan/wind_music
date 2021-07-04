@@ -15,7 +15,7 @@
         class="song-item-main-box"
         v-for="(item, index) in songListData"
         :key="index"
-        :style="{ backgroundColor: index % 2 == 0 ? '' : '#2b2b2b' }"
+        :style="{ backgroundColor: index % 2 == 0 ? '' : '#f9f9f9' }"
       >
         <!-- 收藏按钮盒子 -->
         <div
@@ -91,6 +91,13 @@
           {{ macthDateEvent(item.dt) }}
         </div>
       </div>
+    </div>
+    <div
+      class="show-more-btn"
+      @click="showMoreSongList"
+      v-show="total !== songListData.length"
+    >
+      <span>加载更多</span>
     </div>
   </div>
 </template>

@@ -48,6 +48,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("//at.alicdn.com/t/font_2585248_yufnr5m3cqg.css");
 @import "./recommendMv.scss";
 </style>

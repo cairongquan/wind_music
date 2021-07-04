@@ -20,13 +20,13 @@ function createWindow() {
   /**
    * Initial window options
    */
-  mainWindow = new BrowserWindow({ //
-    height: 800,
+  mainWindow = new BrowserWindow({
+    minWidth: 800,
+    minHeight: 600,
     useContentSize: true,
-    width: 1120,//宽
     frame: false,//无边框
-    resizable: false,//用户可拖拽大小尺寸
-    transparent: true, //背景是否透明
+    resizable: true,//用户可拖拽大小尺寸
+    transparent: false, //背景是否透明
     thickFrame: true,
     webPreferences: {
       devTools: true,

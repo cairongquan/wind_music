@@ -1,13 +1,18 @@
+@import url("https://at.alicdn.com/t/font_2585248_l9nevy03xb.css?spm=a313x.7781069.1998910419.77&file=font_2585248_l9nevy03xb.css");
+
 .header-title {
   height: 30px;
   line-height: 30px;
-  color: #d0d0d0;
-  font-size: 24px;
+  color: #111111;
+  font-size: 25px;
   user-select: none;
-
+  padding: 10px;
+  padding-left: 0px;
 
   .main-title {
-    font-weight: 600;
+    padding: 10px;
+    border-radius: 5.45px;
+    font-weight: 800;
     transition: 210ms ease-in-out all;
     align-items: center;
     cursor: pointer;
@@ -15,22 +20,42 @@
     width: 180px;
 
     i {
-      transition: all 200ms ease-in-out;
+      transition: all 210ms ease-in-out;
       font-weight: 600;
       margin-left: 5px;
     }
 
-    .leftMoveIcon{
+    .leftMoveIcon {
       transform: translateX(0px);
       font-weight: 100;
     }
-    .rightMoveIcon{
-      font-weight: 600;
+
+    .rightMoveIcon {
+      font-weight: 800;
       transform: translateX(10px);
     }
   }
 
   .main-title:hover {
-    color: #fff;
+    background-color: #e9e9e9;
+  }
+}
+
+.arrow-change-box {
+  display: flex;
+  width: 21px;
+  overflow: hidden;
+  color: #111111;
+
+  i {
+    transition: all ease 210ms;
+  }
+
+  .icon-play {
+    transform: translateX(-21px);
+  }
+
+  .icon-jiantou {
+    transform: translateX(-20px);
   }
 }

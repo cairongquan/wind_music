@@ -121,5 +121,4 @@ export default {
 
 <style lang="scss" scoped>
 @import "songSheetList.scss";
-@import url("//at.alicdn.com/t/font_2585248_ts6n5smyf.css");
 </style>

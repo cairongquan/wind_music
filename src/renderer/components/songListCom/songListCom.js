@@ -3,7 +3,10 @@ export default {
     props: {
         songListData: {
             type: Array
-        }
+        },
+        total: {
+            type: Number
+        },
     },
     data() {
         return {
@@ -24,8 +27,12 @@ export default {
         },
         tapSongEvent(val) {
             this.$store.commit("changeMusicInfoHandle", val);
+        },
+        showMoreSongList() {
+            this.$emit("getMoreSongDataList");
         }
     },
     created() {
+        console.log(this.total, 'total');
     }
 }

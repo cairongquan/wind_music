@@ -1,4 +1,4 @@
-$main_text_color: #d0d0d0;
+$main_text_color: #1f1f1f;
 $main_color: #ec4141;
 
 #main-comment-out-box {
@@ -77,14 +77,14 @@ $main_color: #ec4141;
           }
 
           .thumbs-up-box {
-            color: #666767;
+            color: #1f1f1f;
 
             i {
               cursor: pointer;
             }
 
             i:hover {
-              color: #fff;
+              color: #1f1f1f;
             }
           }
         }
@@ -147,7 +147,7 @@ $main_color: #ec4141;
           border-radius: 5.45px;
           padding-left: 10px;
           padding-top: 0px;
-          background-color: #373737;
+          background-color: #f9f9f9;
         }
       }
     }

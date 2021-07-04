@@ -1,10 +1,8 @@
 <template>
   <div id="main-header">
     <div class="logo-header-bxo">
-      <img :src="headerLogo"/>
-    </div>
-    <div class="prow-with-love">
-      <img :src="prowerWithLove">
+      <!-- <img :src="headerLogo"/> -->
+      <i class="iconfont icon-yinle"></i>
     </div>
     <div class="btns-show-box">
       <div class="min-btn btn" @click="miniWindowEvent">
@@ -27,5 +25,4 @@ export default {
 
 <style lang="scss" scoped>
 @import "./header.scss";
-@import url(//at.alicdn.com/t/font_2585248_izehd6db7fg.css);
 </style>

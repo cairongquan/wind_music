@@ -11,10 +11,13 @@ export default {
             }
         })
     },
-    getDetailSong(trackIds) { //获取歌单所有歌曲详情
+    getDetailSong(ids) { //获取歌单所有歌曲详情
         return axios.request({
-            url: `https://api.mtnhao.com/song/detail?ids=${trackIds}`,
+            url: `/song/detail`,
             method: "GET",
+            params: {
+                ids
+            }
         })
     },
     getDynamicInfo(id) { //获取歌单详情数据

@@ -5,7 +5,7 @@
     <header id="main-header-songSheet-box">
       <!--      歌单封面region-->
       <div class="header-cover-image-box">
-        <img :src="songSheetData.playlist.coverImgUrl" alt="专辑封面"/>
+        <img :src="songSheetData.playlist.coverImgUrl" alt="专辑封面" />
       </div>
       <!--      歌单简介region -->
       <div class="song-sheet-introduction-box">
@@ -19,8 +19,8 @@
           <div style="display: flex; align-items: center">
             <div class="user-headPortrait-box">
               <img
-                  :src="songSheetData.playlist.creator.avatarUrl"
-                  alt="用户头像"
+                :src="songSheetData.playlist.creator.avatarUrl"
+                alt="用户头像"
               />
             </div>
             <div class="user-info-main-box">
@@ -31,29 +31,30 @@
               <div class="upload-time-box">
                 <span>创建时间:</span>
                 <span>{{
-                    DateFormatNumG(songSheetData.playlist.updateTime, "Y-M-D")
-                  }}</span>
+                  DateFormatNumG(songSheetData.playlist.updateTime, "Y-M-D")
+                }}</span>
               </div>
             </div>
           </div>
-          <!-- 操作栏 -->
-          <div class="tool-group-box">
-            <!-- 播放全部 -->
-            <div class="tool-child-box play-icon">
-              <i class="iconfont icon-play"></i>
-            </div>
-            <!-- 收藏 -->
-            <div class="tool-child-box collection-icon">
-              <i class="iconfont icon-shoucang"></i>
-            </div>
-            <!-- 分享 -->
-            <div class="tool-child-box share-icon-box">
-              <i class="iconfont icon-fenxiang"></i>
-            </div>
-            <!-- 下载 -->
-            <div class="tool-child-box download-icon-box">
-              <i class="iconfont icon-xiazai1"></i>
-            </div>
+        </div>
+
+        <!-- 操作栏 -->
+        <div class="tool-group-box">
+          <!-- 播放全部 -->
+          <div class="tool-child-box play-icon">
+            <i class="iconfont icon-play"></i>
+          </div>
+          <!-- 收藏 -->
+          <div class="tool-child-box collection-icon">
+            <i class="iconfont icon-shoucang"></i>
+          </div>
+          <!-- 分享 -->
+          <div class="tool-child-box share-icon-box">
+            <i class="iconfont icon-fenxiang"></i>
+          </div>
+          <!-- 下载 -->
+          <div class="tool-child-box download-icon-box">
+            <i class="iconfont icon-xiazai1"></i>
           </div>
         </div>
 
@@ -62,9 +63,9 @@
           <div class="song-tags-box">
             <span>标签:</span>
             <div
-                class="tag-item-box"
-                v-for="(item, index) in songSheetData.playlist.tags"
-                :key="index"
+              class="tag-item-box"
+              v-for="(item, index) in songSheetData.playlist.tags"
+              :key="index"
             >
               {{ item }}
             </div>
@@ -75,16 +76,16 @@
         <div class="songSheet-intro-main-box">
           <span>简介:</span>
           <div
-              ref="descriptionBox"
-              class="content-box"
-              :style="{ height: descriptionStrHeight + 'px' }"
+            ref="descriptionBox"
+            class="content-box"
+            :style="{ height: descriptionStrHeight + 'px' }"
           >
             {{ songSheetData.playlist.description }}
           </div>
           <i
-              v-if="isShowPullIcon"
-              @click="pullContentEvent"
-              :class="['iconfont', pullIcon]"
+            v-if="isShowPullIcon"
+            @click="pullContentEvent"
+            :class="['iconfont', pullIcon]"
           ></i>
         </div>
       </div>
@@ -92,18 +93,19 @@
     <!-- 主内容区域 -->
     <div class="content-box-main">
       <tabs-com
-          :style="{height:tabHeight}"
-          @changeTabIndexHandle="changeTabIndexHandle"
-          class="tab-box-left"
-          :tabsData="[
-          `歌曲(${songSheetData.playlist.trackCount}首)`,
-          `评论(${unitChangeEvent(songSheetData.playlist.commentCount)})`,
-        ]"
+        @changeTabIndexHandle="changeTabIndexHandle"
+        class="tab-box-left"
+        :tabsData="[`歌曲(${songSheetData.playlist.trackCount}首)`, `评论`]"
       >
         <!-- 页面 -->
         <!-- 歌单列表 -->
         <div :slot="0">
-          <song-list-com ref="songListCom" :songListData="songDataList"></song-list-com>
+          <song-list-com
+            ref="songListCom"
+            :total="songSheetData.playlist.trackCount"
+            :songListData="songDataList"
+            @getMoreSongDataList="getMoreSongDataList"
+          ></song-list-com>
         </div>
         <!-- 评论 -->
         <div :slot="1">
@@ -111,18 +113,18 @@
         </div>
       </tabs-com>
       <!-- 收藏盒子 -->
-      <div class="subscribers-box">
+      <!-- <div class="subscribers-box">
         <div class="sub-title-header">收藏者</div>
         <ul class="subscribers-box-mainUl">
           <li
-              :key="index"
-              v-for="(item, index) in songSheetData.playlist.subscribers"
+            :key="index"
+            v-for="(item, index) in songSheetData.playlist.subscribers"
           >
-            <img :src="item.avatarUrl"/>
+            <img :src="item.avatarUrl" />
             <span>{{ item.nickname }}</span>
           </li>
         </ul>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -131,14 +133,13 @@
 import songSheetJs from "./songSheetView.js";
 import tabsCom from "../../components/tabsCom/tabsCom.vue";
 import songListCom from "../../components/songListCom/songListCom.vue";
-import commitCom from "../../components/commitCom/commitCom.vue"
-
+import commitCom from "../../components/commitCom/commitCom.vue";
 
 export default {
   components: {
     "tabs-com": tabsCom,
     "song-list-com": songListCom,
-    "commit-com": commitCom
+    "commit-com": commitCom,
   },
   ...songSheetJs,
 };
@@ -146,5 +147,4 @@ export default {
 
 <style lang="scss" scoped>
 @import "./songSheetView.scss";
-@import url("//at.alicdn.com/t/font_2585248_zlwl4kcb0r.css");
 </style>

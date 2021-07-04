@@ -4,7 +4,7 @@
     <!-- 精彩评论区域 -->
     <div class="hot-comment-box">
       <div class="title-box" style="padding-top: 0px">
-        <span>精彩评论({{ commitData.hotComments.length }})</span>
+        <span>精彩评论</span>
         <div class="title-box-tag">hot</div>
       </div>
       <div class="hot-comment-list-box">
@@ -45,7 +45,7 @@
     <!--    最新评论-->
     <div class="new-comment-box">
       <div class="title-box">
-        <span>最新评论({{ commitData.comments.length }})</span>
+        <span>最新评论</span>
         <div class="title-box-tag">new</div>
       </div>
       <!-- 最新评论列表展示 -->
@@ -130,6 +130,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("//at.alicdn.com/t/font_2585248_izehd6db7fg.css");
 @import "./commitCom.scss";
 </style>

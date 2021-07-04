@@ -10,10 +10,13 @@ $transitionVal:all ease-in-out 250ms;
     // 顶部操作指示栏
     .song-list-edit-box {
         display: flex;
-        background-color: #303030;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50%;
         height: 40px;
-        border-top-left-radius: $border_radius;
-        border-top-right-radius: $border_radius;
+        backdrop-filter: saturate(180%) blur(10px);
+        background-color: hsla(0, 0%, 100%, 0.86);
 
         .ht-box {
             line-height: 40px;
@@ -56,7 +59,8 @@ $transitionVal:all ease-in-out 250ms;
         border-bottom-left-radius: $border_radius;
         border-bottom-right-radius: $border_radius;
         overflow: hidden;
-
+        font-weight: 600;
+        font-size: 14px;
 
         .song-item-main-box {
             display: flex;
@@ -80,23 +84,24 @@ $transitionVal:all ease-in-out 250ms;
                 }
 
                 i:hover {
-                    color: #fff;
+                    color: #000;
                 }
             }
 
             .song-title-box {
                 padding-right: 5px;
-                color: $white_color;
+                color: #1f1f1f;
                 width: 42%;
                 overflow: hidden;
                 display: flex;
                 align-items: center;
-
+                font-weight: 600;
                 font-size: 14.5px;
 
                 span {
                     cursor: pointer;
                     height: 100%;
+                    width: calc(100% - 45px);
                     display: block;
                     user-select: none;
                     display: -webkit-box;
@@ -129,7 +134,7 @@ $transitionVal:all ease-in-out 250ms;
                 color: $defalut_text_color;
 
                 span:hover {
-                    color: #fff;
+                    color: #000;
                     cursor: pointer;
                 }
             }
@@ -146,7 +151,7 @@ $transitionVal:all ease-in-out 250ms;
             }
 
             .song-cover-box span:hover {
-                color: #fff;
+                color: #000;
                 cursor: pointer;
             }
 
@@ -158,4 +163,25 @@ $transitionVal:all ease-in-out 250ms;
         }
     }
 
+}
+
+.show-more-btn {
+    background-color: #335eea;
+    text-align: center;
+    width: 100px;
+    height: 40px;
+    margin: 10px auto;
+    line-height: 40px;
+    color: #fff;
+    border-radius: 5.45px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 600;
+    font-size: 13.5px;
+    transition: width ease-in-out 200ms;
+    box-shadow: 1px 1px 15px .5px rgba(51, 94, 234, .35);
+}
+
+.show-more-btn:hover {
+    width: 120px;
 }

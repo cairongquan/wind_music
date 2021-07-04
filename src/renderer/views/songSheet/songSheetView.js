@@ -6,12 +6,14 @@ export default {
         return {
             collectionPersonNum: 12,//收藏人数
             songSheetData: {},//专辑信息数据对象
-            descriptionStrHeight: 20,//歌单简介高度
+            descriptionStrHeight: 22,//歌单简介高度
             descriptionStrRealHeight: null,//歌单简介实际宽度
             pullIcon: "icon-xiala1",//下拉icon字符串
             isShowPullIcon: false,//是否展示下拉icon
             songDataList: [],//歌曲数据
             commitArrayData: [],//评论歌单数据
+            activeSongListIndex: 0,//当前激活歌单索引
+            songIdsArray: [],//歌曲ids二维数组
         }
     },
     props: {
@@ -21,26 +23,41 @@ export default {
     },
     methods: {
         async getSongSheetData() { //获取歌单详情
-            const {data: res} = await songSheetApi.getSongSheetInfo(this.id, this.collectionPersonNum);
+            const { data: res } = await songSheetApi.getSongSheetInfo(this.id, this.collectionPersonNum);
             this.songSheetData = res;
+            console.log(this.songSheetData, 'data')
             this.$nextTick(() => { //计算歌曲详情高度
                 this.descriptionStrRealHeight = this.$refs.descriptionBox.scrollHeight;
                 this.descriptionStrRealHeight == this.descriptionStrHeight ? this.isShowPullIcon = false : this.isShowPullIcon = true;
             });
-            console.log(res, '歌单信息');
-            this.getSongData(res.playlist.trackIds);
+            this.createIdsArray(res.playlist.trackIds);
             this.getSonSheetDynamic();
         },
-        async getSongData(ids) { //获取歌曲信息列表
-            const tranIds = ids.map(item => item.id).join(",");
-            const {data: musicDetailData} = await songSheetApi.getDetailSong(tranIds);
-            this.songDataList = musicDetailData.songs;
-            console.log(this.songDataList, '歌曲列表数据');
+        createIdsArray(array) { //生成ids二维数组
+            let tempIdsArray = array.map(item => item.id), tempArray = [];
+            for (let i = 0; i < tempIdsArray.length; i++) {
+                if (tempArray.length === 20) {
+                    this.songIdsArray.push([tempArray.join(",")]);
+                    tempArray = [];
+                    tempArray.push(tempIdsArray[i]);
+                } else {
+                    tempArray.push(tempIdsArray[i]);
+                }
+            };
+            if (tempArray.length != 0) {
+                this.songIdsArray.push([tempArray.join(",")]);
+            };
+            this.getSongData();
+        },
+
+        async getSongData() { //获取歌曲信息列表
+            const { data: musicDetailData } = await songSheetApi.getDetailSong(...this.songIdsArray[this.activeSongListIndex]);
+            this.songDataList.push(...musicDetailData.songs);
+            this.activeSongListIndex += 1;
         },
         async getSonSheetDynamic() { //获取歌单评论
-            const {data: commitArrayData} = await songSheetApi.getSongSheetComment(this.id, this.songSheetData.playlist.commentCount > 50 ? 50 : this.songSheetData.playlist.commentCount);
+            const { data: commitArrayData } = await songSheetApi.getSongSheetComment(this.id, this.songSheetData.playlist.commentCount > 50 ? 50 : this.songSheetData.playlist.commentCount);
             this.commitArrayData = commitArrayData;
-            console.log(this.commitArrayData, '评论数据');
         },
         DateFormatNumG(time, fmt) { //时间戳转换
             const t = new Date(time)
@@ -78,7 +95,8 @@ export default {
             this.descriptionStrHeight = this.descriptionStrRealHeight;
             this.pullIcon = "icon-shang"
         },
-        changeTabIndexHandle(index) {
+        getMoreSongDataList() {
+            this.getSongData();
         }
     },
     created() {

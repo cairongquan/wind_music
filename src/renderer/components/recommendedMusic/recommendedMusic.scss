@@ -1,5 +1,5 @@
 #main-box-reMusic {
-  width: 1070px;
+  width: 100%;
 
   .content-show-list-box {
     padding: 10px 0px;
@@ -12,7 +12,7 @@
 
       // 单个盒子
       .content-item-box {
-        width: 32%;
+        width: 30%;
         padding: 10px 7px;
         display: flex;
         align-items: center;
@@ -59,8 +59,9 @@
 
 
         .music-info-box {
-          color: #d4d4d4;
+          color: #1e1e1e;
           padding: 0px 10px;
+          font-weight: 600;
           user-select: none;
 
           .music-name {
@@ -91,7 +92,7 @@
       }
 
       .content-item-box:hover {
-        background-color: #3b3b3b;
+        background-color: #e9e9e9;
       }
     }
   }

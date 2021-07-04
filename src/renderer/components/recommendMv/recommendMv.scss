@@ -1,5 +1,5 @@
 #re-mv-box {
-    padding: 30px 0px;
+    padding: 20px 0px;
 
     .content-main-box {
         user-select: none;
@@ -74,21 +74,23 @@
                 padding-top: 5px;
 
                 .mv-name {
+                    font-weight: 600;
                     cursor: pointer;
                     display: -webkit-box;
                     -webkit-line-clamp: 1;
                     overflow: hidden;
                     -webkit-box-orient: vertical;
-                    color: #cacaca;
+                    color: #1e1e1e;
                     font-size: 15px;
                     transition: 200ms ease-in-out all;
                 }
 
                 .mv-name:hover {
-                    color: #fff;
+                    color: #111111;
                 }
 
                 .artistName-box {
+                    font-weight: 600;
                     display: -webkit-box;
                     -webkit-line-clamp: 1;
                     overflow: hidden;

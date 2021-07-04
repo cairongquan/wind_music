@@ -7,8 +7,6 @@
       <re-cover></re-cover>
       <!-- 推荐音乐 -->
       <re-music></re-music>
-      <!-- 独家放送 -->
-      <exclusive-broad-cast></exclusive-broad-cast>
       <!-- 推荐MV -->
       <re-mv></re-mv>
     </div>

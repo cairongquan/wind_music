@@ -1,4 +1,10 @@
-@import url("https://at.alicdn.com/t/font_2585248_lhay6omzt2b.css?spm=a313x.7781069.1998910419.41&file=font_2585248_lhay6omzt2b.css");
+* {
+    font-family: arlow, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei,
+        Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif,
+        microsoft uighur;
+}
+
 
 $heade_main_color: #202023;
 $body_main_color: #2e2e2e;
@@ -6,5 +12,4 @@ $main_text_color: #d4d4d4;
 $main_hover_color:#fff;
 $border_main_radius: 5.45px;
 $trastion_delay: 200ms;
-$rgba_black:rgba(0,0,0,.65);
-
+$rgba_black:rgba(0, 0, 0, .65);

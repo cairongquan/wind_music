@@ -56,6 +56,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("//at.alicdn.com/t/font_2585248_z7kzr75ewi.css");
 @import "./recommendedMusic.scss";
 </style>
