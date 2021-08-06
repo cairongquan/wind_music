@@ -2,7 +2,13 @@
   <div id="app">
     <div class="scroll-box-main">
       <headerCom></headerCom>
-      <router-view class="router-box"></router-view>
+      <keep-alive v-if="$route.meta.keepAlive">
+        <router-view class="router-box"></router-view>
+      </keep-alive>
+      <router-view
+        v-if="!$route.meta.keepAlive"
+        class="router-box"
+      ></router-view>
     </div>
   </div>
 </template>

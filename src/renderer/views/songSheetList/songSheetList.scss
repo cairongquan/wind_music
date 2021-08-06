@@ -2,11 +2,12 @@ $main_color: #ec4141;
 
 #main-out-songSheetList {
   overflow: hidden;
+  margin-top: 80px;
 
   .tag-name-title {
-    font-size: 20px;
-    font-weight: 600;
-    color: #d0d0d0;
+    font-size: 28px;
+    font-weight: 800;
+    color: #1f1f1f;
     user-select: none;
     margin-left: 18px;
   }
@@ -18,22 +19,22 @@ $main_color: #ec4141;
     align-items: center;
     justify-content: center;
     padding-bottom: 20px;
-    border-bottom: 1.2px solid #4a4a4a;
 
     .tag-item {
-      width: 12.2%;
+      width: calc(100% / 6);
       height: 50px;
-      border-radius: 25px;
-      border: 1.2px solid #4a4a4a;
+      border-radius: 5.45px;
       line-height: 50px;
       display: flex;
       align-items: center;
       margin: 10px;
       justify-content: center;
-      color: #d0d0d0;
+      color: #1f1f1f;
+      font-weight: 600;
       user-select: none;
       cursor: pointer;
       transition: all ease-in-out 200ms;
+      background-color: #f5f5f7;
 
       img {
         margin-left: 10px;
@@ -41,11 +42,6 @@ $main_color: #ec4141;
         height: 30px;
         transition: all ease-in-out 200ms;
       }
-    }
-
-    .tag-item:hover {
-      color: #ffffff;
-      background-color: rgba(255, 255, 255, .3);
     }
 
     .tag-item:hover img {
@@ -56,22 +52,23 @@ $main_color: #ec4141;
 
 .sheet-item-main-box {
   position: relative;
-  width: 230px;
-  background-color: #333333;
-  border-radius: 10px;
+  width: 152px;
+  background-color: #f5f5f7;
+  border-radius: 10.9px;
   padding: 10px;
-  margin: 25px 0px;
+  margin: 20px 0px;
   transition: all 200ms ease-in-out;
   cursor: pointer;
 
   img {
-    border-radius: 6px;
+    border-radius: 5.45px;
     width: 100%;
     transition: all ease-in-out 200ms;
   }
 
   .sheet-item-de-box {
-    color: #d0d0d0;
+    color: #1f1f1f;
+    font-weight: 600;
     user-select: none;
     font-size: 15px;
     padding: 18px 0px;
@@ -81,7 +78,7 @@ $main_color: #ec4141;
   .play-btn-box {
     width: 30px;
     height: 30px;
-    line-height: 27px;
+    line-height: 23px;
     background-color: rgba(255, 255, 255, .8);
     color: #ec4141;
     font-size: 25px;
@@ -97,13 +94,14 @@ $main_color: #ec4141;
   .create-date {
     text-align: right;
     font-size: 11px;
-    color: #d0d0d0;
+    color: #1f1f1f;
+    font-weight: 600;
   }
 }
 
 .sheet-item-main-box:hover {
   transform: translateY(-5px);
-  box-shadow: 2px 2px 12px 2px rgba(0, 0, 0, .5);
+  box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, .2);
 }
 
 .sheet-item-main-box:hover .play-btn-box {
@@ -111,12 +109,8 @@ $main_color: #ec4141;
 }
 
 
-.sheet-item-main-box:hover .sheet-item-de-box {
-  color: #ffffff;
-}
-
 .main-conetnt-box {
-  padding-top: 20px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -135,8 +129,8 @@ $main_color: #ec4141;
 
 .main-item-banner-box {
   cursor: pointer;
-  width: 100%;
-  height: 180px;
+  width: calc(800% /8);
+  height: 200px;
   padding: 20px;
   padding-bottom: 0px;
   position: relative;
@@ -230,4 +224,25 @@ $main_color: #ec4141;
   li:hover {
     background-color: $main_color;
   }
+}
+
+.show-more-btn {
+  background-color: #335eea;
+  text-align: center;
+  width: 100px;
+  height: 40px;
+  margin: 10px auto;
+  line-height: 40px;
+  color: #fff;
+  border-radius: 5.45px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  font-size: 13.5px;
+  transition: width ease-in-out 200ms;
+  box-shadow: 1px 1px 15px .5px rgba(51, 94, 234, .35);
+}
+
+.show-more-btn:hover {
+  width: 120px;
 }

@@ -1,6 +1,5 @@
 <template>
   <div id="main-songSheet-box">
-    <button @click="back">返回</button>
     <!--    专辑头部信-->
     <header id="main-header-songSheet-box">
       <!--      歌单封面region-->

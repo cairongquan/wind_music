@@ -7,8 +7,8 @@
         @click="chooseTagEvent('全部')"
         class="tag-item"
         :style="{
-          backgroundColor:
-            '全部' === activeTag ? 'rgba(255, 255, 255, .3)' : '',
+          backgroundColor: '全部' === activeTag ? '#eaeffd' : '',
+          color: '全部' === activeTag ? '#335eea' : '',
         }"
       >
         <span>全部</span>
@@ -19,8 +19,8 @@
         v-for="(item, index) in tagDataArray"
         :key="index"
         :style="{
-          backgroundColor:
-            item.tagName === activeTag ? 'rgba(255, 255, 255, .3)' : '',
+          backgroundColor: item.tagName === activeTag ? '#eaeffd' : '',
+          color: item.tagName === activeTag ? '#335eea' : '',
         }"
       >
         <span>{{ item.tagName }}</span>
@@ -107,6 +107,13 @@
           <div class="create-date">{{ createDate(childItem.createTime) }}</div>
         </div>
       </div>
+    </div>
+    <div
+      class="show-more-btn"
+      v-show="this.form.offset < this.totalSongListLength"
+      @click="showMoreSongSheetBtnEvent"
+    >
+      <span>加载更多</span>
     </div>
   </div>
 </template>

@@ -1,5 +1,7 @@
 import { app, BrowserWindow } from 'electron'
 import '../renderer/store'
+import store from "../../src/renderer/store/index";
+
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -39,19 +41,19 @@ function createWindow() {
   mainWindow.loadURL(winURL)
 
   mainWindow.on('closed', () => {
+    console.log("clearRouterReady")
+    store.commit("clearHistoryArray"); //清空vuex
     mainWindow = null
   })
-
 }
 
 app.on('ready', createWindow)
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
-    app.quit()
+    app.quit();
   }
 })
-
 
 ipc.on('close-window', () => { //关闭程序主进程
   mainWindow.close();

@@ -7,7 +7,7 @@ $main_height: 60px;
   left: 0;
   width: 100%;
   height: $main_height;
-  backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(10px);
   background-color: hsla(0, 0%, 100%, 0.86);
   z-index: 99999;
   display: flex;
@@ -20,7 +20,7 @@ $main_height: 60px;
     width: 30px;
     position: relative;
     border-radius: 50%;
-    background: linear-gradient(38deg, #ffc107, #dd001b, #1b7ad6);
+    background: linear-gradient(38deg, #ffc107, #e81123, #335eea);
     animation: 3s betaAnimationBgc 10s initial alternate;
     transform: scale(.9);
     text-align: center;
@@ -74,8 +74,8 @@ $main_height: 60px;
       border-radius: 5.45px;
 
       i {
-        font-size: 16px;
-        font-weight: 600;
+        font-size: 15px;
+        font-weight: 900;
       }
     }
 
@@ -86,7 +86,7 @@ $main_height: 60px;
 
     .close-btn:hover {
       background-color: #e81123;
-      color: #fff;  
+      color: #fff;
     }
   }
 }
@@ -95,5 +95,35 @@ $main_height: 60px;
   img {
     width: 120px;
     margin-left: 10px;
+  }
+}
+
+
+.router-show-box {
+  display: flex;
+  width: 70px;
+  margin-left: 20px;
+  justify-content: space-around;
+  -webkit-app-region: no-drag;
+
+  .arrow-box {
+    justify-content: space-around;
+    width: 35px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 5.45px;
+    color: #3a3a3a;
+    cursor: pointer;
+    user-select: none;
+
+    i {
+      font-size: 15px;
+      font-weight: 600;
+    }
+  }
+
+  .arrow-box:hover {
+    background-color: #ccc;
   }
 }

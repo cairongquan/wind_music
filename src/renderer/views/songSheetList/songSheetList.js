@@ -12,7 +12,8 @@ export default {
             tagDataArray: [],//tag数据
             form: {
                 cat: "全部",
-                limit: 100
+                offset: 0,
+                limit: 50,
             },
             songSheetListData: [], //歌单数据
             itemWidth: 210,//列宽度
@@ -20,6 +21,7 @@ export default {
             bannerData: [],
             activeBannerIndex: 0, //活动banner图index
             tranlateStr: "translateY(0px)",
+            totalSongListLength: 0,//歌单长度
         }
     },
     methods: {
@@ -30,10 +32,10 @@ export default {
                 const { data: res } = await songSheetListApi.getSongSheetBannerData(bannderTagArray[i]);
                 this.bannerData.push(res.playlists[0]);
             };
-            console.log(this.bannerData);
         },
         jumpToBanner(index) { //点击跳转bannerItem
-            this.tranlateStr = `translateX(${-1080 * index}px)`
+
+            this.tranlateStr = `translateX(${-(12.5 * index)}%)`
             this.activeBannerIndex = index;
         },
         //歌单主题生成
@@ -48,16 +50,18 @@ export default {
             });
         },
         async getSongSheetList() { //获取歌单列表
+            this.form.offset = 0;
             const { data: res } = await songSheetListApi.getSongSheetList(this.form);
             this.songSheetListData = res.playlists;
             this.songSheetListData.forEach(item => {
-                item["domHeight"] = tools.getRandomIntInclusive(180, 270);
-            })
+                item["domHeight"] = tools.getRandomIntInclusive(130, 180);
+            });
+            this.totalSongListLength = res.total;
             this.createWaterfallData();
         },
         createWaterfallData() { //生成瀑布流数据
             const mainBoxWidth = document.querySelector("#main-out-songSheetList").offsetWidth;
-            const column = Math.floor(mainBoxWidth / 220);
+            const column = Math.ceil(mainBoxWidth / 180);
             this.renderData = [];
             for (let i = 0; i < column - 1; i++) {
                 this.renderData.push([]);
@@ -75,6 +79,7 @@ export default {
                 });
                 heightArray.push(height);
             });
+            let tempArray = heightArray;
             let minIndex = heightArray[0];
             let finalIndex = 0;
             heightArray.forEach((item, index) => {
@@ -95,9 +100,24 @@ export default {
         },
         createDate(date) {
             return tools.DateFormatNumG(date, "Y-M-D");
+        },
+        async showMoreSongSheetBtnEvent() { //展示更多按钮点击事件
+            this.form.offset += 50;
+            const { data: res } = await songSheetListApi.getSongSheetList(this.form);
+            const moreSongList = res.playlists.map(item => {
+                item["domHeight"] = tools.getRandomIntInclusive(130, 180);
+                return item;
+            });
+            this.totalSongListLength = res.total;
+            moreSongList.forEach(item => {
+                this.renderData[this.countMinHeightIndex()].push(item);
+            })
         }
     },
     created() {
+        window.onresize = () => {
+            this.createWaterfallData();
+        }
         this.getSongSheetList();
         this.getEmojiData();
         this.getBannerData();
