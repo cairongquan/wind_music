@@ -54,7 +54,7 @@ export default {
             const { data: res } = await songSheetListApi.getSongSheetList(this.form);
             this.songSheetListData = res.playlists;
             this.songSheetListData.forEach(item => {
-                item["domHeight"] = tools.getRandomIntInclusive(130, 180);
+                item["domHeight"] = tools.getRandomIntInclusive(100, 180);
             });
             this.totalSongListLength = res.total;
             this.createWaterfallData();
@@ -79,7 +79,6 @@ export default {
                 });
                 heightArray.push(height);
             });
-            let tempArray = heightArray;
             let minIndex = heightArray[0];
             let finalIndex = 0;
             heightArray.forEach((item, index) => {

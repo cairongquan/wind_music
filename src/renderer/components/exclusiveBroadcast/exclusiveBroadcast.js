@@ -13,7 +13,7 @@ export default {
     },
     methods: {
         async getExclusiveCast() {        //获取独家歌曲
-            const {data: res} = await homeApi.getExclusiveCast(this.limit);
+            const { data: res } = await homeApi.getExclusiveCast(this.limit);
             res.result.forEach(item => {
                 item["isShowIcon"] = false;
             })

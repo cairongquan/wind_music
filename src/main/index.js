@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron'
+import { remote, app, BrowserWindow, globalShortcut } from 'electron'
 import '../renderer/store'
 import store from "../../src/renderer/store/index";
 
@@ -9,6 +9,9 @@ import store from "../../src/renderer/store/index";
 if (process.env.NODE_ENV !== 'development') {
   global.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
 }
+
+
+
 
 let mainWindow;
 const winURL = process.env.NODE_ENV === 'development'
@@ -36,6 +39,7 @@ function createWindow() {
       experimentalFeatures: true,
       enableBlinkFeatures: "CSSBackdropfilter"
     }
+
   })
 
   mainWindow.loadURL(winURL)
