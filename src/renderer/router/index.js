@@ -42,7 +42,6 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
     let historyRouters = store.state.Counter.routerHistory;
-    console.log(historyRouters);
     store.commit("setHistoryArray", to.path);
     next();
 })

@@ -1,29 +1,49 @@
 <template>
-  <div id="main-header">
-    <div class="logo-header-bxo">
-      <!-- <img :src="headerLogo"/> -->
-      <i class="iconfont icon-yinle"></i>
-    </div>
+  <div>
+    <div id="main-header">
+      <div class="logo-header-bxo">
+        <!-- <img :src="headerLogo"/> -->
+        <i class="iconfont icon-yinle"></i>
+      </div>
 
-    <!-- 路由导航区域 -->
-    <div class="router-show-box">
-      <!-- 返回按钮 -->
-      <div class="arrow-box" @click="backArrowBtnEvent">
-        <i style="font-size:15px;" class="iconfont icon-a-jiantou1"></i>
+      <!-- 路由导航区域 -->
+      <div class="router-show-box">
+        <!-- 返回按钮 -->
+        <div class="arrow-box" @click="backArrowBtnEvent">
+          <i style="font-size:15px;" class="iconfont icon-a-jiantou1"></i>
+        </div>
+        <div class="arrow-box" @click="preArrowBtnEvent">
+          <i style="font-size:15px;" class="iconfont icon-a-jiantou"></i>
+        </div>
       </div>
-      <div class="arrow-box" @click="preArrowBtnEvent">
-        <i style="font-size:15px;" class="iconfont icon-a-jiantou"></i>
+      <div
+        class="seachbar"
+        :style="{
+          width: isFocus ? '270px' : '120px',
+          borderRadius: isFocus ? '5.45px' : '2px',
+        }"
+      >
+        <input
+          @input="seachInputInputEvent"
+          @blur="blurSeachEvent"
+          @focus="focusSeachEvent"
+          type="text"
+          placeholder="搜点啥？"
+          v-model="seachValue"
+        />
+        <i class="iconfont icon-sousuo"></i>
+      </div>
+      <!-- 右侧操作栏 -->
+      <div class="btns-show-box">
+        <div class="min-btn btn" @click="miniWindowEvent">
+          <i class="iconfont icon-suoxiao"></i>
+        </div>
+        <div class="close-btn btn" @click="closeWindowEvent">
+          <i class="iconfont icon-quxiao"></i>
+        </div>
       </div>
     </div>
-    <!-- 右侧操作栏 -->
-    <div class="btns-show-box">
-      <div class="min-btn btn" @click="miniWindowEvent">
-        <i class="iconfont icon-suoxiao"></i>
-      </div>
-      <div class="close-btn btn" @click="closeWindowEvent">
-        <i class="iconfont icon-quxiao"></i>
-      </div>
-    </div>
+    <div class="seach-listbox"></div>
   </div>
 </template>
 

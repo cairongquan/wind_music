@@ -13,6 +13,7 @@ $main_height: 60px;
   display: flex;
   align-items: center;
   -webkit-app-region: drag;
+  border-bottom: 1px solid #eaeaea;
 
   .logo-header-bxo {
     margin-left: 15px;
@@ -125,5 +126,66 @@ $main_height: 60px;
 
   .arrow-box:hover {
     background-color: #ccc;
+  }
+}
+
+.seachbar {
+  -webkit-app-region: no-drag;
+  background-color: #eaeaea;
+  width: 120px;
+  height: 20px;
+  border-radius: 0px;
+  padding: 2.5px 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 250ms ease-in-out;
+  box-shadow: 1px 1px 12px .5px rgba(0, 0, 0, .1);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  input {
+    -webkit-app-region: no-drag;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    width: 90%;
+    height: 15px;
+    z-index: 99;
+  }
+
+  i {
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
+.seach-listbox {
+  width: 280px;
+  height: 450px;
+  position: fixed;
+  top: 70px;
+  left: 50%;
+  background-color: hsla(0, 0%, 100%, 1);
+  transform: translateX(-50%);
+  box-shadow: 1px 1px 15px .4px rgba(0, 0, 0, .1);
+  border-radius: 10px;
+  z-index: 999;
+  transition: all ease-in-out .5s;
+  animation: seachListHide .5s ease-in-out;
+  border: 1px solid #eaeaea;
+}
+
+@keyframes seachListHide {
+  0% {
+    top: 70px;
+    opacity: 1;
+  }
+
+  100% {
+    top: -100%;
+    opacity: 0;
   }
 }

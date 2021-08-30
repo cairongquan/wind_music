@@ -5,6 +5,9 @@ export default {
         return {
             headerLogo: require("./header_logo.png"),
             prowerWithLove: require("./prowWithLove.png"),
+            isFocus: false,
+            seachValue: "",
+            seachList: []
         }
     },
     methods: {
@@ -37,6 +40,38 @@ export default {
                     path: historyRouterList[index + 1]
                 })
             }
+        },
+        blurSeachEvent() {
+            if (!this.seachValue) this.isFocus = false;
+            else null;
+        },
+        focusSeachEvent() {
+            this.isFocus = true;
+        },
+        // async seachInputInputEvent(e) {
+        //     if (!this.seachValue.trim()) {
+        //         return;
+        //     }
+        //     const data = await this.$http.get("/search", {
+        //         params: {
+        //             keywords: this.seachValue,
+        //             limit: 6,
+        //         }
+        //     });
+        //     console.log(data);
+        // },
+        async testData() {
+            const { data: resolve } = await this.$http.get("/search", {
+                params: {
+                    keywords: "朴树",
+                    limit: 6,
+                }
+            });
+            this.seachList = resolve.result.songs;
+            console.log(this.seachList);
         }
+    },
+    created() {
+        this.testData();
     }
 }
