@@ -164,6 +164,11 @@ ul {
     cursor: pointer;
     user-select: none;
   }
+
+  i:hover {
+    color: #1f1f1f;
+    font-weight: 600;
+  }
 }
 
 .seach-listbox {
@@ -251,12 +256,14 @@ ul {
   }
 
   span {
+    width: calc(100% - 80px);
     word-break: break-all;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     overflow: hidden;
+    margin-left: 10px;
   }
 }
 
@@ -278,11 +285,13 @@ ul {
   }
 
   span {
+    width: calc(100% - 80px);
     word-break: break-all;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     overflow: hidden;
+    margin-left: 10px;
   }
 }

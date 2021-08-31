@@ -43,8 +43,9 @@ export default {
             }
         },
         blurSeachEvent() {
-            if (!this.seachValue) this.isFocus = false, this.isShowSeachList = false;
+            if (!this.seachValue) this.isFocus = false;
             else null;
+            this.isShowSeachList = false
         },
         focusSeachEvent() {
             this.isFocus = true;
