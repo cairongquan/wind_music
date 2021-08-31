@@ -7,7 +7,6 @@ export default {
     },
     methods: {
         jumpToPage() {
-            console.log(1);
             this.$router.push(this.pageUrl);
         },
         details() {

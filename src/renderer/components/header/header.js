@@ -6,6 +6,7 @@ export default {
             headerLogo: require("./header_logo.png"),
             prowerWithLove: require("./prowWithLove.png"),
             isFocus: false,
+            isShowSeachList: false,
             seachValue: "",
             seachList: []
         }
@@ -42,36 +43,24 @@ export default {
             }
         },
         blurSeachEvent() {
-            if (!this.seachValue) this.isFocus = false;
+            if (!this.seachValue) this.isFocus = false, this.isShowSeachList = false;
             else null;
         },
         focusSeachEvent() {
             this.isFocus = true;
+            this.isShowSeachList = true;
         },
-        // async seachInputInputEvent(e) {
-        //     if (!this.seachValue.trim()) {
-        //         return;
-        //     }
-        //     const data = await this.$http.get("/search", {
-        //         params: {
-        //             keywords: this.seachValue,
-        //             limit: 6,
-        //         }
-        //     });
-        //     console.log(data);
-        // },
-        async testData() {
-            const { data: resolve } = await this.$http.get("/search", {
+        async seachInputInputEvent(e) {
+            if (!this.seachValue.trim()) {
+                return;
+            }
+            const { data: resolve } = await this.$http.get("/cloudsearch", {
                 params: {
-                    keywords: "朴树",
+                    keywords: this.seachValue,
                     limit: 6,
                 }
             });
             this.seachList = resolve.result.songs;
-            console.log(this.seachList);
-        }
+        },
     },
-    created() {
-        this.testData();
-    }
 }
