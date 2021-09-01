@@ -7,10 +7,14 @@ export default {
     data() {
         return {
             isPlay: false,//播放状态 true:播放中 false:暂停
-            musicInfo: null
+            musicInfo: null,
+            playPath: ""
         }
     },
     methods: {
+        playEvent() {
+            this.$refs["audioDom"].play();
+        }
     },
     computed: {
         getMusicInfo() {
@@ -21,6 +25,7 @@ export default {
         getMusicInfo(val) {
             this.musicInfo = val;
             console.log(this.musicInfo);
+            this.playPath = `https://music.163.com/song/media/outer/url?id=${this.musicInfo.id}.mp3`;
         }
     },
     created() {
