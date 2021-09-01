@@ -9,17 +9,18 @@
         v-if="!$route.meta.keepAlive"
         class="router-box"
       ></router-view>
+      <playPage></playPage>
     </div>
   </div>
 </template>
 
 <script>
 import headerCom from "./components/header/header.vue";
-import playLayoutCom from "./mainComponents/playLayout.vue";
+import playPage from "./views/playPage/playPage.vue";
 export default {
   components: {
     headerCom,
-    "play-layout": playLayoutCom,
+    playPage,
   },
   name: "wind_music",
 };

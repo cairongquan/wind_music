@@ -25,7 +25,7 @@ export default {
         async getSongSheetData() { //获取歌单详情
             const { data: res } = await songSheetApi.getSongSheetInfo(this.id, this.collectionPersonNum);
             this.songSheetData = res;
-            console.log(this.songSheetData, 'data')
+
             this.$nextTick(() => { //计算歌曲详情高度
                 this.descriptionStrRealHeight = this.$refs.descriptionBox.scrollHeight;
                 this.descriptionStrRealHeight == this.descriptionStrHeight ? this.isShowPullIcon = false : this.isShowPullIcon = true;
@@ -97,9 +97,14 @@ export default {
         },
         getMoreSongDataList() {
             this.getSongData();
-        }
+        },
+        // windowResizeEvent() {
+        //     if (this.descriptionStrHeight)
+        //         this.descriptionStrRealHeight = this.$refs.descriptionBox.scrollHeight;
+        // }
     },
     created() {
+        window.onresize = this.windowResizeEvent;
         this.getSongSheetData();
     },
 }

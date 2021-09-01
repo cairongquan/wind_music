@@ -9,10 +9,10 @@
     <div class="router-show-box">
       <!-- 返回按钮 -->
       <div class="arrow-box" @click="backArrowBtnEvent">
-        <i style="font-size:15px;" class="iconfont icon-a-jiantou1"></i>
+        <i style="font-size: 15px" class="iconfont icon-a-jiantou1"></i>
       </div>
       <div class="arrow-box" @click="preArrowBtnEvent">
-        <i style="font-size:15px;" class="iconfont icon-a-jiantou"></i>
+        <i style="font-size: 15px" class="iconfont icon-a-jiantou"></i>
       </div>
     </div>
     <!-- 右侧操作栏 -->
