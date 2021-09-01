@@ -53,6 +53,7 @@ export default {
         },
         async seachInputInputEvent(e) {
             if (!this.seachValue.trim()) {
+                this.seachList = [];
                 return;
             }
             const { data: resolve } = await this.$http.get("/cloudsearch", {

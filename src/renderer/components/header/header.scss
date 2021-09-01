@@ -248,6 +248,7 @@ ul {
   align-items: center;
   border-radius: 5.45px;
   cursor: pointer;
+  text-align: right;
 
   img {
     width: 80px;
@@ -273,7 +274,8 @@ ul {
   user-select: none;
   font-size: 14px;
   font-weight: 600;
-  justify-content: space-between;
+  text-align: right;
+  justify-content: space-around;
   align-items: center;
   border-bottom: 1px solid #eaeaea;
   padding: 2.5px 0px;
