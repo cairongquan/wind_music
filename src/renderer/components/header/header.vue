@@ -45,6 +45,7 @@
     </div>
     <div :class="[isShowSeachList ? 'seach-listbox' : 'seach-listbox-hide']">
       <ul>
+        <li class="noseachdata" v-show="seachList.length === 0">暂无数据哦!</li>
         <li v-for="(item, index) in seachList" :key="index">
           <div :class="[index === 0 ? 'seach-first-item' : 'seach-item']">
             <img :src="item.al.picUrl" />
