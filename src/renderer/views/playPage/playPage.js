@@ -13,7 +13,13 @@ export default {
     },
     methods: {
         playEvent() {
-            this.$refs["audioDom"].play();
+            if (this.isPlay) {
+                this.$refs["audioDom"].pause();
+            } else {
+                this.$refs["audioDom"].play();
+            }
+            this.isPlay = !this.isPlay;
+
         }
     },
     computed: {
@@ -23,9 +29,12 @@ export default {
     },
     watch: {
         getMusicInfo(val) {
+            this.isPlay = true;
             this.musicInfo = val;
-            console.log(this.musicInfo);
             this.playPath = `https://music.163.com/song/media/outer/url?id=${this.musicInfo.id}.mp3`;
+            setTimeout(() => {
+                this.$refs["audioDom"].play();
+            }, 30)
         }
     },
     created() {

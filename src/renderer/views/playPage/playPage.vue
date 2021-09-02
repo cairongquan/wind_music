@@ -8,7 +8,7 @@
     </div>
     <div class="playBox-controllBox">
       <div class="controllBox-play controllBox" @click="playEvent">
-        <i :class="['iconfont', isPlay ? 'icon-zanting' : 'icon-bofang']"></i>
+        <i :class="['iconfont', isPlay ? 'icon-zanting1' : 'icon-bofang']"></i>
       </div>
     </div>
     <audio ref="audioDom" :src="this.playPath"></audio>

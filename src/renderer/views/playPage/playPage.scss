@@ -1,4 +1,4 @@
-@import url("//at.alicdn.com/t/font_2585248_nck91606c58.css");
+@import url("//at.alicdn.com/t/font_2585248_8osj0vycko8.css");
 $main_color: #ec4141;
 $white_color: #d0d0d0;
 
@@ -29,6 +29,7 @@ $white_color: #d0d0d0;
 
 .controllBox {
     i {
+        font-weight: 800;
         color: $main_color;
         cursor: pointer;
     }
@@ -46,6 +47,7 @@ $white_color: #d0d0d0;
         border-radius: 5.45px;
         border: 1px solid $white_color;
         cursor: pointer;
+        box-shadow: 1px 1px 15px 1px rgab(0, 0, 0, .1);
     }
 
     .musicInfo_title {
@@ -61,5 +63,4 @@ $white_color: #d0d0d0;
         font-weight: 600;
         font-size: 13px;
     }
-
 }
