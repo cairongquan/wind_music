@@ -43,9 +43,8 @@ export default {
             }
         },
         blurSeachEvent() {
-            if (!this.seachValue) this.isFocus = false;
-            else null;
-            this.isShowSeachList = false
+            this.isFocus = false;
+            // this.isShowSeachList = false
         },
         focusSeachEvent() {
             this.isFocus = true;
@@ -60,9 +59,21 @@ export default {
                 params: {
                     keywords: this.seachValue,
                     limit: 6,
+                    type: 1
                 }
             });
             this.seachList = resolve.result.songs;
         },
+        showItemInfoEvent(val) {
+            this.$store.commit("changeMusicInfoHandle", val);
+        },
     },
+    created() {
+        document.body.addEventListener("click", (e) => {
+            const className = e.target.className;
+            if (className !== 'songItemLi' && !this.isFocus) {
+                this.isShowSeachList = false;
+            }
+        }, true)
+    }
 }

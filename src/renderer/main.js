@@ -9,7 +9,7 @@ import "./public/style/public.scss"
 Vue.prototype.$http = axios;
 
 
-axios.defaults.baseURL = "http://localhost:4000/"
+axios.defaults.baseURL = "http://localhost:3000/"
 
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
