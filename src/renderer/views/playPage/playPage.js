@@ -19,12 +19,14 @@ export default {
                 this.$refs["audioDom"].play();
             }
             this.isPlay = !this.isPlay;
-
         }
     },
     computed: {
         getMusicInfo() {
             return this.$store.state.Counter.musicInfo;
+        },
+        songEndEvent() {
+            // console.log(1);
         }
     },
     watch: {
@@ -38,6 +40,6 @@ export default {
         }
     },
     created() {
-
+        this.$refs["audioDom"].ended = this.songEndEvent;
     }
 }

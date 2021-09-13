@@ -26,6 +26,7 @@ export default {
             this.modeIconnName = this.mode ? "icon-liebiao1" : "icon-liebiao";
         },
         tapSongEvent(val) {
+            console.log(val);
             this.$store.commit("changeMusicInfoHandle", val);
         },
         showMoreSongList() {

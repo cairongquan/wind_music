@@ -1,7 +1,8 @@
 <template>
-  <header class="header-title" @click="jumpToPage">
+  <header class="header-title">
     <div
       class="main-title"
+      @click="jumpToPage"
       @mouseover="isMoveTitle = true"
       @mouseleave="isMoveTitle = false"
     >
